@@ -10,7 +10,7 @@ import { resorts, interestBySlug } from '@/lib/data'
 export const metadata: Metadata = {
   title: 'Explore the Maldives by Interest',
   description:
-    'Find your Maldives by feeling — diving, honeymoon, family, relaxation and more. Discover the islands that match how you dream of travelling.',
+    'Explore Maldives travel-style inspiration — from diving and honeymoons to family holidays and relaxation — with Aloha Travels.',
 }
 
 export default async function ExplorePage({

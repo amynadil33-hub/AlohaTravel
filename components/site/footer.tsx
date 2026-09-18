@@ -41,8 +41,8 @@ export function Footer() {
             </span>
             <p className="mt-4 text-pretty text-sm leading-relaxed text-deep-foreground/70">
               Curated Maldives travel, shaped by local knowledge. Handpicked island
-              escapes, unforgettable experiences and personal planning — from the
-              people who know these islands best.
+              escapes, unforgettable experiences and personalised planning backed
+              by experience and local knowledge.
             </p>
             <div className="mt-6 flex gap-3">
               <SocialLink href={WHATSAPP_URL} label="WhatsApp">
