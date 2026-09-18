@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     template: '%s · Aloha Travels',
   },
   description:
-    'Handpicked Maldives island escapes, unforgettable experiences and local expertise. Curated resorts and authentic guest houses, shaped by local knowledge.',
+    'Personalised Maldives holidays shaped around your interests, preferences, and budget with Aloha Travels.',
   keywords: [
     'Maldives',
     'Maldives resorts',

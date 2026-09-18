@@ -26,6 +26,7 @@ export function PropertyBrowser({
     () => Array.from(new Set(items.map((p) => p.atoll))).sort(),
     [items],
   )
+  const hasVerifiedInterestMappings = items.some((p) => p.interests.length > 0)
 
   const filtered = useMemo(() => {
     let list = items.filter((p) => {
@@ -112,23 +113,25 @@ export function PropertyBrowser({
           ))}
         </div>
 
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="mr-1 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-            Interest
-          </span>
-          <FilterChip active={interest === 'all'} onClick={() => setInterest('all')}>
-            Anything
-          </FilterChip>
-          {interests.map((i) => (
-            <FilterChip
-              key={i.slug}
-              active={interest === i.slug}
-              onClick={() => setInterest(i.slug)}
-            >
-              {i.name}
+        {hasVerifiedInterestMappings && (
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="mr-1 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              Interest
+            </span>
+            <FilterChip active={interest === 'all'} onClick={() => setInterest('all')}>
+              Anything
             </FilterChip>
-          ))}
-        </div>
+            {interests.map((i) => (
+              <FilterChip
+                key={i.slug}
+                active={interest === i.slug}
+                onClick={() => setInterest(i.slug)}
+              >
+                {i.name}
+              </FilterChip>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Results meta */}

@@ -25,7 +25,7 @@ export function PropertyCard({
       <div className={cn('relative overflow-hidden', featured ? 'aspect-[16/11]' : 'aspect-[4/3]')}>
         <Image
           src={property.heroImage || '/placeholder.svg'}
-          alt={property.name}
+          alt=""
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"

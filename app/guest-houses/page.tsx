@@ -7,7 +7,7 @@ import { CtaBand } from '@/components/site/cta-band'
 export const metadata: Metadata = {
   title: 'Maldives Hotels & Guest Houses',
   description:
-    'Explore hotels and guest houses on local Maldivian islands, curated by Aloha Travels.',
+    'Contact Aloha Travels to plan a hotel or guest-house stay while our approved collection is being prepared.',
 }
 
 export default function GuestHousesPage() {

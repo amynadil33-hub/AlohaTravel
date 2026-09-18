@@ -6,7 +6,6 @@ import { MoodGrid } from '@/components/explore/mood-grid'
 import { SectionHeader } from '@/components/site/section-header'
 import { CtaBand } from '@/components/site/cta-band'
 import { resorts, interestBySlug } from '@/lib/data'
-import type { InterestSlug } from '@/lib/types'
 
 export const metadata: Metadata = {
   title: 'Explore the Maldives by Interest',
@@ -46,7 +45,7 @@ export default async function ExplorePage({
           <SectionHeader
             eyebrow="Start with a mood"
             title="Six ways to feel the Maldives"
-            description="Every mood leads to a curated set of stays and experiences."
+            description="Use these ideas as inspiration for the kind of holiday you want to plan."
             className="mb-10"
           />
           <MoodGrid />
@@ -55,14 +54,11 @@ export default async function ExplorePage({
 
       <section className="mx-auto max-w-6xl px-5 pb-16 pt-6 md:px-8 md:pb-24">
         <SectionHeader
-          eyebrow={matched ? `Resorts for ${matched.name.toLowerCase()}` : 'Approved collection'}
-          title={matched ? `Resorts made for ${matched.name.toLowerCase()}` : 'Browse approved resorts'}
+          eyebrow="Approved collection"
+          title="Browse approved resorts"
           className="mb-10"
         />
-        <PropertyBrowser
-          items={resorts}
-          initialInterest={interest as InterestSlug | undefined}
-        />
+        <PropertyBrowser items={resorts} />
       </section>
 
       <CtaBand />

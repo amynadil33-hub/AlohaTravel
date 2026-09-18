@@ -8,7 +8,7 @@ import { resorts } from '@/lib/data'
 export const metadata: Metadata = {
   title: 'Maldives Resorts',
   description:
-    'Private-island resorts across the Maldives — overwater villas, house reefs and barefoot luxury, curated by Aloha Travels.',
+    'Browse approved Maldives resort identities and plan a personalised holiday with Aloha Travels.',
 }
 
 export default function ResortsPage() {
@@ -17,7 +17,7 @@ export default function ResortsPage() {
       <PageHero
         eyebrow="Private islands"
         title="Resorts"
-        description="One island, one resort. Explore our collection of private-island escapes — from intimate house-reef hideaways to grand overwater sanctuaries."
+        description="Explore approved Maldives resort identities and contact Aloha Travels to plan a holiday around your interests, preferences, and budget."
         image="/images/resort-baros.png"
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Resorts' }]}
       />

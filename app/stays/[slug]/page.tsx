@@ -10,7 +10,6 @@ import { PageShell } from '@/components/site/page-shell'
 import { Reveal } from '@/components/site/reveal'
 import { SectionHeader } from '@/components/site/section-header'
 import { Tag } from '@/components/site/tag'
-import { Gallery } from '@/components/property/gallery'
 import { InquiryForm } from '@/components/site/inquiry-form'
 import { ExperienceCard } from '@/components/site/experience-card'
 import { PropertyCard } from '@/components/site/property-card'
@@ -96,13 +95,6 @@ export default async function StayPage({
           </Reveal>
         </div>
 
-        {/* Gallery */}
-        <div className="mx-auto max-w-6xl px-6">
-          <Reveal>
-            <Gallery images={property.gallery} name={property.name} />
-          </Reveal>
-        </div>
-
         {/* Body grid */}
         <div className="mx-auto mt-14 max-w-6xl px-6">
           <div className="grid gap-14 lg:grid-cols-[1fr_360px]">
@@ -114,7 +106,7 @@ export default async function StayPage({
                   <InfoStat label="Atoll" value={property.atoll} />
                   <InfoStat
                     label="Style"
-                    value="Private resort"
+                    value="Resort"
                   />
                 </div>
                 <div className="space-y-4 text-pretty text-[1.05rem] leading-relaxed text-foreground/90">
