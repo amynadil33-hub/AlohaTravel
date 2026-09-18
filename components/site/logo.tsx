@@ -4,9 +4,11 @@ import { cn } from '@/lib/utils'
 
 export function Logo({
   onDark = false,
+  prominent = false,
   className,
 }: {
   onDark?: boolean
+  prominent?: boolean
   className?: string
 }) {
   return (
@@ -15,17 +17,17 @@ export function Logo({
       aria-label="Aloha Travels — home"
       className={cn('group inline-flex items-center gap-2.5', className)}
     >
-      <span className="inline-flex size-11 items-center justify-center overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-black/5 transition-transform duration-300 group-hover:scale-[1.03]">
+      <span className={cn('inline-flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-[1.03]', prominent ? 'h-[72px] w-[74px] sm:w-[88px]' : 'size-12')}>
         <Image
           src="/images/aloha-logo.png"
           alt="Aloha Travels logo"
-          width={44}
-          height={44}
-          className="size-full object-contain p-1"
+          width={prominent ? 88 : 48}
+          height={prominent ? 72 : 48}
+          className="size-full object-contain"
           priority
         />
       </span>
-      <span className="flex flex-col leading-none">
+      <span className={cn('flex flex-col leading-none', prominent && 'sr-only')}>
         <span
           className={cn(
             'font-serif text-xl font-semibold tracking-tight',

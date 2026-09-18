@@ -4,11 +4,11 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Alloha Travels & Tours — Curated Maldives Travel',
-    template: '%s · Alloha Travels & Tours',
+    default: 'Aloha Travels — Curated Maldives Travel',
+    template: '%s · Aloha Travels',
   },
   description:
-    'Handpicked Maldives island escapes, unforgettable experiences and local expertise. Curated resorts and authentic guest houses, shaped by local knowledge.',
+    'Personalised Maldives holidays shaped around your interests, preferences, and budget with Aloha Travels.',
   keywords: [
     'Maldives',
     'Maldives resorts',
@@ -19,11 +19,10 @@ export const metadata: Metadata = {
     'snorkeling',
     'honeymoon',
   ],
-  generator: 'v0.app',
   openGraph: {
-    title: 'Alloha Travels & Tours — Curated Maldives Travel',
+    title: 'Aloha Travels — Curated Maldives Travel',
     description:
-      'Handpicked island escapes, unforgettable experiences and local expertise — curated by Alloha Travels & Tours.',
+      'Handpicked island escapes, unforgettable experiences and local expertise — curated by Aloha Travels.',
     type: 'website',
   },
 }

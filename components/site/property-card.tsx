@@ -25,14 +25,14 @@ export function PropertyCard({
       <div className={cn('relative overflow-hidden', featured ? 'aspect-[16/11]' : 'aspect-[4/3]')}>
         <Image
           src={property.heroImage || '/placeholder.svg'}
-          alt={property.name}
+          alt=""
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
         <div className="absolute left-4 top-4">
           <Tag variant="onImage" className="capitalize">
-            {property.type === 'resort' ? 'Resort' : 'Guest House'}
+            {property.type === 'resort' ? 'Resort' : 'Hotel / Guest House'}
           </Tag>
         </div>
       </div>

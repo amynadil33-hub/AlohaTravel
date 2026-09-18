@@ -3,15 +3,13 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import { ArrowLeft, ChevronRight } from 'lucide-react'
 import {
-  properties,
-  propertyBySlug,
+  resorts,
   experienceBySlug,
 } from '@/lib/data'
 import { PageShell } from '@/components/site/page-shell'
 import { Reveal } from '@/components/site/reveal'
 import { SectionHeader } from '@/components/site/section-header'
 import { Tag } from '@/components/site/tag'
-import { Gallery } from '@/components/property/gallery'
 import { InquiryForm } from '@/components/site/inquiry-form'
 import { ExperienceCard } from '@/components/site/experience-card'
 import { PropertyCard } from '@/components/site/property-card'
@@ -23,7 +21,7 @@ import {
 import { RoomCategoryCard } from '@/components/property/room-category-card'
 
 export function generateStaticParams() {
-  return properties.map((p) => ({ slug: p.slug }))
+  return resorts.map((p) => ({ slug: p.slug }))
 }
 
 export async function generateMetadata({
@@ -32,7 +30,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params
-  const property = propertyBySlug(slug)
+  const property = resorts.find((item) => item.slug === slug)
   if (!property) return { title: 'Stay not found' }
   return {
     title: `${property.name} — ${property.atoll}`,
@@ -46,7 +44,7 @@ export default async function StayPage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const property = propertyBySlug(slug)
+  const property = resorts.find((item) => item.slug === slug)
   if (!property) notFound()
 
   const relatedExperiences = property.experiences
@@ -54,12 +52,12 @@ export default async function StayPage({
     .filter((e): e is NonNullable<typeof e> => Boolean(e))
     .slice(0, 3)
 
-  const similar = properties
-    .filter((p) => p.type === property.type && p.id !== property.id)
+  const similar = resorts
+    .filter((p) => p.id !== property.id)
     .slice(0, 3)
 
-  const backHref = property.type === 'resort' ? '/resorts' : '/guest-houses'
-  const backLabel = property.type === 'resort' ? 'All resorts' : 'All guest houses'
+  const backHref = '/resorts'
+  const backLabel = 'All resorts'
 
   return (
     <PageShell>
@@ -97,13 +95,6 @@ export default async function StayPage({
           </Reveal>
         </div>
 
-        {/* Gallery */}
-        <div className="mx-auto max-w-6xl px-6">
-          <Reveal>
-            <Gallery images={property.gallery} name={property.name} />
-          </Reveal>
-        </div>
-
         {/* Body grid */}
         <div className="mx-auto mt-14 max-w-6xl px-6">
           <div className="grid gap-14 lg:grid-cols-[1fr_360px]">
@@ -115,7 +106,7 @@ export default async function StayPage({
                   <InfoStat label="Atoll" value={property.atoll} />
                   <InfoStat
                     label="Style"
-                    value={property.type === 'resort' ? 'Private resort' : 'Local island'}
+                    value="Resort"
                   />
                 </div>
                 <div className="space-y-4 text-pretty text-[1.05rem] leading-relaxed text-foreground/90">
@@ -210,9 +201,7 @@ export default async function StayPage({
             <div className="flex items-end justify-between gap-4">
               <SectionHeader
                 eyebrow="Keep exploring"
-                title={
-                  property.type === 'resort' ? 'Similar resorts' : 'More local stays'
-                }
+                title="Similar resorts"
                 className="mb-0"
               />
               <Link

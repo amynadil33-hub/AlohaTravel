@@ -6,13 +6,13 @@ import { PageShell } from '@/components/site/page-shell'
 import { PageHero } from '@/components/site/page-hero'
 import { Reveal } from '@/components/site/reveal'
 import { CtaBand } from '@/components/site/cta-band'
-import { experiences, properties } from '@/lib/data'
+import { experiences, resorts } from '@/lib/data'
 import { cn } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: 'Maldives Experiences',
   description:
-    'Whale sharks, manta rays, sunset dhoni cruises and sandbank picnics — unforgettable Maldives experiences curated by Alloha Travels & Tours.',
+    'Explore experience ideas for a personalised Maldives holiday with Aloha Travels.',
 }
 
 export default function ExperiencesPage() {
@@ -21,7 +21,7 @@ export default function ExperiencesPage() {
       <PageHero
         eyebrow="Beyond the villa"
         title="Experiences"
-        description="The Maldives isn't only where you stay — it's what you do. These are the moments our guests remember most."
+        description="The Maldives isn't only where you stay — it's what you do. Explore experiences that can shape your time in the islands."
         image="/images/exp-manta.png"
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Experiences' }]}
       />
@@ -29,7 +29,7 @@ export default function ExperiencesPage() {
       <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
         <div className="flex flex-col gap-20 md:gap-28">
           {experiences.map((exp, i) => {
-            const related = properties.filter((p) =>
+            const related = resorts.filter((p) =>
               exp.relatedPropertyIds.includes(p.id),
             )
             const flip = i % 2 === 1

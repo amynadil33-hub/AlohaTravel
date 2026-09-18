@@ -10,37 +10,30 @@ import { CtaBand } from '@/components/site/cta-band'
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    'Alloha Travels & Tours is a Maldivian, family-run travel company crafting honest island journeys — from private-island resorts to local guest houses.',
+    'Aloha Travels creates personalised Maldives holidays backed by more than 20 years of travel and tourism experience.',
 }
 
 const values = [
   {
     icon: MapPinned,
-    title: 'Local, through and through',
-    body: 'We are Maldivian born and raised. Every island we recommend is one we know by name — its reef, its people, its rhythm.',
+    title: 'Deep local knowledge',
+    body: 'Our Maldives travel and tourism experience gives us deep local knowledge to help shape each holiday.',
   },
   {
     icon: HeartHandshake,
-    title: 'Honest guidance',
-    body: 'No pushy upsells. We match you to the stay that fits your trip and budget, whether that is an overwater suite or a beach house.',
+    title: 'Personal service',
+    body: 'We create personalised holidays around your interests, preferences, and budget.',
   },
   {
     icon: ShieldCheck,
-    title: 'Cared for, start to finish',
-    body: 'Transfers, permits, dining, excursions — we handle the logistics so your only job is to arrive and unwind.',
+    title: 'Trusted relationships',
+    body: 'We draw on trusted industry relationships built through more than 20 years of experience.',
   },
   {
     icon: Compass,
-    title: 'Built around you',
-    body: 'Diving addict, honeymooners, a family of five — we shape the itinerary around what you actually love doing.',
+    title: 'Details taken care of',
+    body: 'From resorts, hotels and guest houses to holiday packages and yacht experiences, we take care of the details.',
   },
-]
-
-const stats = [
-  { value: '12+', label: 'Years on the water' },
-  { value: '60+', label: 'Islands we know' },
-  { value: '4,000+', label: 'Trips planned' },
-  { value: '4.9', label: 'Average guest rating' },
 ]
 
 export default function AboutPage() {
@@ -48,10 +41,10 @@ export default function AboutPage() {
     <PageShell>
       <PageHero
         eyebrow="Our story"
-        title="Maldives, told by the people who call it home"
-        description="Alloha Travels & Tours is a small, family-run team turning the world's most photographed islands into journeys that actually feel like yours."
+        title="Personalised Maldives holidays"
+        description="At Aloha Travels, we create personalised Maldives holidays built around your interests, preferences, and budget."
         image="/images/made-in-maldives.png"
-        breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'About' }]}
+        breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'About Us' }]}
       />
 
       {/* Intro split */}
@@ -67,39 +60,28 @@ export default function AboutPage() {
             />
           </Reveal>
           <Reveal className="space-y-5">
-            <span className="eyebrow text-secondary">Alloha Travels &amp; Tours</span>
+            <span className="eyebrow text-secondary">Aloha Travels</span>
             <h2 className="text-balance font-serif text-4xl leading-[1.05] text-primary md:text-5xl">
-              We started with one boat and a simple idea
+              More than 20 years of Maldives experience
             </h2>
             <div className="space-y-4 text-pretty text-lg leading-relaxed text-muted-foreground">
               <p>
-                That the Maldives should be shared the way locals experience it —
-                unhurried, generous and deeply personal. What began as a single
-                dhoni ferrying friends between islands grew into a travel company
-                trusted by thousands of guests.
+                At Aloha Travels, we create personalised Maldives holidays built
+                around your interests, preferences, and budget.
               </p>
               <p>
-                Today we curate both sides of the Maldives: the barefoot luxury of
-                private-island resorts, and the warm, authentic charm of local
-                island guest houses. Same ocean, two very different ways to fall in
-                love with it.
+                With roots in Aloha Maldives Pvt. Ltd., established in 2004, we
+                bring more than 20 years of Maldives travel and tourism experience,
+                deep local knowledge, trusted industry relationships, and personal
+                service.
+              </p>
+              <p>
+                From resorts, hotels and guest houses to holiday packages and
+                yacht experiences, we take care of the details so you can simply
+                enjoy the Maldives.
               </p>
             </div>
           </Reveal>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="bg-primary py-16 text-primary-foreground">
-        <div className="mx-auto grid max-w-5xl grid-cols-2 gap-10 px-6 md:grid-cols-4">
-          {stats.map((s, i) => (
-            <Reveal key={s.label} delay={i * 80} className="text-center">
-              <div className="font-serif text-5xl leading-none">{s.value}</div>
-              <div className="mt-2 text-sm uppercase tracking-[0.14em] text-primary-foreground/70">
-                {s.label}
-              </div>
-            </Reveal>
-          ))}
         </div>
       </section>
 
@@ -107,9 +89,9 @@ export default function AboutPage() {
       <section className="py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeader
-            eyebrow="What we believe"
-            title="Travel that feels handmade"
-            description="A few principles guide every itinerary we build."
+            eyebrow="Why Aloha Travels"
+            title="Maldives travel shaped around you"
+            description="Experience, local knowledge, trusted relationships, and personal service."
             align="center"
           />
           <div className="mt-14 grid gap-8 sm:grid-cols-2">
@@ -136,7 +118,7 @@ export default function AboutPage() {
 
       <CtaBand
         title="Let's plan your Maldives"
-        copy="Tell us how you like to travel and we'll design an itinerary around it — no obligation, no pressure."
+        copy="Tell us how you like to travel and we'll help shape a Maldives itinerary around you."
         primaryLabel="Start your trip"
         primaryHref="/contact"
       />

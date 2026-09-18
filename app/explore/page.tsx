@@ -5,13 +5,12 @@ import { PropertyBrowser } from '@/components/site/property-browser'
 import { MoodGrid } from '@/components/explore/mood-grid'
 import { SectionHeader } from '@/components/site/section-header'
 import { CtaBand } from '@/components/site/cta-band'
-import { properties, interestBySlug } from '@/lib/data'
-import type { InterestSlug } from '@/lib/types'
+import { resorts, interestBySlug } from '@/lib/data'
 
 export const metadata: Metadata = {
   title: 'Explore the Maldives by Interest',
   description:
-    'Find your Maldives by feeling — diving, honeymoon, family, relaxation and more. Discover the islands that match how you dream of travelling.',
+    'Explore Maldives travel-style inspiration — from diving and honeymoons to family holidays and relaxation — with Aloha Travels.',
 }
 
 export default async function ExplorePage({
@@ -46,7 +45,7 @@ export default async function ExplorePage({
           <SectionHeader
             eyebrow="Start with a mood"
             title="Six ways to feel the Maldives"
-            description="Every mood leads to a curated set of stays and experiences."
+            description="Use these ideas as inspiration for the kind of holiday you want to plan."
             className="mb-10"
           />
           <MoodGrid />
@@ -55,14 +54,11 @@ export default async function ExplorePage({
 
       <section className="mx-auto max-w-6xl px-5 pb-16 pt-6 md:px-8 md:pb-24">
         <SectionHeader
-          eyebrow={matched ? `Stays for ${matched.name.toLowerCase()}` : 'The full collection'}
-          title={matched ? `Islands made for ${matched.name.toLowerCase()}` : 'Browse every stay'}
+          eyebrow="Approved collection"
+          title="Browse approved resorts"
           className="mb-10"
         />
-        <PropertyBrowser
-          items={properties}
-          initialInterest={interest as InterestSlug | undefined}
-        />
+        <PropertyBrowser items={resorts} />
       </section>
 
       <CtaBand />

@@ -29,7 +29,7 @@ export function MobileNav({ onDark = false }: { onDark?: boolean }) {
             size="icon"
             aria-label="Open menu"
             className={cn(
-              'lg:hidden',
+              'xl:hidden',
               onDark ? 'text-white hover:bg-white/15' : 'text-foreground',
             )}
           />
@@ -43,7 +43,7 @@ export function MobileNav({ onDark = false }: { onDark?: boolean }) {
           <div className="border-b border-border px-6 py-5">
             <Logo />
           </div>
-          <nav className="flex flex-1 flex-col gap-1 px-4 py-6" aria-label="Mobile">
+          <nav className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto px-4 py-6" aria-label="Mobile">
             {navLinks.map((link) => {
               const active = pathname === link.href
               return (

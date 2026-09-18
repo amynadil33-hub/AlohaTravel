@@ -6,16 +6,14 @@ export interface InquiryFormState {
   errors?: Record<string, string>
 }
 
-// In production this would persist to the database (see lib/types.ts Inquiry)
-// and/or notify the team. Here we validate and simulate a successful capture.
+// This action validates the form before presenting direct contact options.
+// It does not persist or deliver enquiry data.
 export async function submitInquiry(
   _prev: InquiryFormState,
   formData: FormData,
 ): Promise<InquiryFormState> {
   const name = String(formData.get('name') ?? '').trim()
   const contact = String(formData.get('contact') ?? '').trim()
-  const travelDates = String(formData.get('travelDates') ?? '').trim()
-  const guests = String(formData.get('guests') ?? '').trim()
   const message = String(formData.get('message') ?? '').trim()
 
   const errors: Record<string, string> = {}
@@ -29,18 +27,8 @@ export async function submitInquiry(
     return { ok: false, message: 'Please fix the highlighted fields.', errors }
   }
 
-  // Simulate network / persistence latency.
-  await new Promise((r) => setTimeout(r, 700))
-
-  console.log('[v0] New inquiry captured:', {
-    name,
-    contact,
-    travelDates,
-    guests,
-  })
-
   return {
     ok: true,
-    message: `Thank you, ${name.split(' ')[0]}! Our team will be in touch within 24 hours to start planning your Maldives.`,
+    message: `Thanks, ${name.split(' ')[0]}. Your details have not been sent automatically. Please contact Aloha Travels by email or WhatsApp to continue your enquiry.`,
   }
 }
