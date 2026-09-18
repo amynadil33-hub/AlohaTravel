@@ -120,7 +120,13 @@ export function InquiryForm({
       </Field>
 
       <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:items-center sm:justify-end">
-        <Button type="submit" size="pill" variant="ocean" disabled={pending}>
+        <Button
+          type="submit"
+          size="pill"
+          variant="ocean"
+          disabled={pending}
+          className="w-full px-4 text-xs sm:w-auto sm:px-6 sm:text-sm"
+        >
           {pending ? 'Checking…' : 'Continue to contact options'}
           {!pending ? (
             <Send className="size-4" data-icon="inline-end" aria-hidden="true" />

@@ -51,9 +51,9 @@ export default function ContactPage() {
       />
 
       <section className="py-20 md:py-24">
-        <div className="mx-auto grid max-w-6xl gap-14 px-6 lg:grid-cols-[1fr_380px]">
+        <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)] gap-14 px-6 lg:grid-cols-[1fr_380px]">
           {/* Form */}
-          <Reveal className="order-2 lg:order-1">
+          <Reveal className="min-w-0 order-2 lg:order-1">
             <div className="mb-8 space-y-2">
               <span className="eyebrow text-secondary">Send an enquiry</span>
               <h2 className="font-serif text-3xl text-primary md:text-4xl">
