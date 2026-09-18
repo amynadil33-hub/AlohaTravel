@@ -1,70 +1,52 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, MapPin } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[92vh] flex-col justify-end overflow-hidden">
+    <section className="relative flex min-h-[680px] items-center overflow-hidden pt-24 md:min-h-[730px]">
       <Image
         src="/images/hero-lagoon.png"
         alt="Aerial view of a Maldivian lagoon with overwater villas at golden hour"
         fill
         priority
         sizes="100vw"
-        className="object-cover"
+        className="object-cover object-[60%_center]"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/25 to-primary/40" />
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-deep/80 via-primary/38 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/25 via-transparent to-white/5" />
 
-      <div className="relative mx-auto w-full max-w-6xl px-5 pb-16 pt-32 md:px-8 md:pb-24">
-        <div className="max-w-3xl">
-          <span className="eyebrow mb-6 inline-flex items-center gap-2 text-white/85">
-            <MapPin className="size-3.5" aria-hidden="true" />
-            1,192 islands · 26 atolls · one ocean
+      <div className="relative mx-auto w-full max-w-7xl px-5 py-20 md:px-8 md:py-24">
+        <div className="max-w-[680px]">
+          <span className="eyebrow mb-5 inline-flex border-l-4 border-accent pl-3 text-white">
+            Welcome to paradise
           </span>
-          <h1 className="text-balance text-5xl font-medium leading-[0.98] text-white md:text-7xl lg:text-[5.5rem]">
-            Find your side of paradise.
+          <h1 className="max-w-3xl text-balance text-5xl font-medium leading-[0.95] text-white drop-shadow-sm md:text-7xl lg:text-[5.15rem]">
+            Discover Maldives, The Aloha Way
           </h1>
-          <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-white/85 md:text-xl">
-            From overwater sanctuaries to warm-hearted local islands, we curate
-            stays across the Maldives around one simple question — what do you
-            dream of doing?
+          <p className="mt-5 max-w-2xl text-lg font-bold text-white md:text-xl">
+            Backed by more than 20 years of Maldives travel experience.
           </p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <p className="mt-3 max-w-xl text-pretty text-base leading-relaxed text-white/90 md:text-lg">
+            Personalised Maldives holidays shaped around your interests,
+            preferences, and budget, with deep local knowledge and personal
+            service at every step.
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Button
               size="xl"
-              className="bg-white text-primary hover:bg-white/90"
+              className="rounded-lg bg-secondary text-white shadow-lg shadow-deep/15 hover:bg-secondary/90"
               render={<Link href="/explore" />}
             >
-              Start exploring
+              Explore Maldives
               <ArrowRight className="size-4" data-icon="inline-end" aria-hidden="true" />
             </Button>
-            <Button size="xl" variant="on-dark" render={<Link href="/resorts" />}>
-              Browse resorts
+            <Button size="xl" variant="on-dark" className="rounded-lg border-white/60 bg-white/10" render={<Link href="/contact" />}>
+              Plan your holiday
             </Button>
           </div>
         </div>
-      </div>
-
-      <div className="relative border-t border-white/15 bg-primary/30 backdrop-blur-md">
-        <dl className="mx-auto grid max-w-6xl grid-cols-2 gap-px px-5 py-6 text-white md:grid-cols-4 md:px-8">
-          {[
-            ['150+', 'Curated stays'],
-            ['40+', 'Local islands'],
-            ['8', 'Ways to travel'],
-            ['24/7', 'Local concierge'],
-          ].map(([stat, label]) => (
-            <div key={label} className="flex flex-col gap-1 px-2">
-              <dt className="font-serif text-3xl font-medium md:text-4xl">
-                {stat}
-              </dt>
-              <dd className="text-xs uppercase tracking-[0.14em] text-white/70">
-                {label}
-              </dd>
-            </div>
-          ))}
-        </dl>
       </div>
     </section>
   )

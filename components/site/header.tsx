@@ -7,9 +7,16 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { Logo } from './logo'
 import { MobileNav } from './mobile-nav'
-import { navLinks } from './nav-links'
+import { navLinks, WHATSAPP_URL } from './nav-links'
+import { MessageCircle } from 'lucide-react'
 
-export function Header({ transparent = false }: { transparent?: boolean }) {
+export function Header({
+  transparent = false,
+  homepage = false,
+}: {
+  transparent?: boolean
+  homepage?: boolean
+}) {
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
 
@@ -31,13 +38,15 @@ export function Header({ transparent = false }: { transparent?: boolean }) {
         'fixed inset-x-0 top-0 z-50 transition-all duration-500',
         isOverlay
           ? 'bg-transparent py-4'
-          : 'border-b border-border/70 bg-background/85 py-3 shadow-[0_1px_0_rgba(0,0,0,0.02)] backdrop-blur-md',
+          : homepage
+            ? 'border-b border-primary/10 bg-white py-2 shadow-[0_8px_30px_-24px_rgba(6,42,82,0.45)]'
+            : 'border-b border-border/70 bg-background/85 py-3 shadow-[0_1px_0_rgba(0,0,0,0.02)] backdrop-blur-md',
       )}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 lg:px-8">
-        <Logo onDark={onDark} />
+      <div className={cn('mx-auto flex max-w-7xl items-center justify-between px-5 lg:px-8', homepage ? 'gap-4' : 'gap-6')}>
+        <Logo onDark={onDark} prominent={homepage} />
 
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
+        <nav className={cn('hidden items-center lg:flex', homepage ? 'gap-5 xl:gap-7' : 'gap-7')} aria-label="Primary">
           {navLinks.slice(1, 6).map((link) => {
             const active = pathname === link.href
             return (
@@ -45,7 +54,8 @@ export function Header({ transparent = false }: { transparent?: boolean }) {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'relative text-sm font-medium transition-colors',
+                  'relative font-medium transition-colors',
+                  homepage ? 'text-[0.82rem] xl:text-sm' : 'text-sm',
                   onDark
                     ? 'text-white/85 hover:text-white'
                     : active
@@ -63,19 +73,32 @@ export function Header({ transparent = false }: { transparent?: boolean }) {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link
-            href="/about"
-            className={cn(
-              'hidden text-sm font-medium transition-colors lg:inline-flex',
-              onDark ? 'text-white/85 hover:text-white' : 'text-foreground/70 hover:text-primary',
-            )}
-          >
-            About
-          </Link>
+          {homepage && (
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="hidden items-center gap-2 text-sm font-bold text-primary transition-colors hover:text-secondary xl:inline-flex"
+            >
+              <MessageCircle className="size-4 text-emerald-600" aria-hidden="true" />
+              +960 797 4004
+            </a>
+          )}
+          {!homepage && (
+            <Link
+              href="/about"
+              className={cn(
+                'hidden text-sm font-medium transition-colors lg:inline-flex',
+                onDark ? 'text-white/85 hover:text-white' : 'text-foreground/70 hover:text-primary',
+              )}
+            >
+              About
+            </Link>
+          )}
           <Button
             size="pill"
             variant={onDark ? 'on-dark' : 'ocean'}
-            className="hidden sm:inline-flex"
+            className={cn('hidden sm:inline-flex', homepage && 'rounded-lg bg-secondary px-5 hover:bg-secondary/90')}
             render={<Link href="/contact" />}
           >
             Plan Your Trip
