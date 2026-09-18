@@ -6,26 +6,26 @@ const columns = [
   {
     title: 'Explore',
     links: [
+      { label: 'Maldives', href: '/maldives' },
       { label: 'Resorts', href: '/resorts' },
-      { label: 'Guest Houses', href: '/guest-houses' },
+      { label: 'Hotels & Guest Houses', href: '/guest-houses' },
       { label: 'Experiences', href: '/experiences' },
-      { label: 'Explore by Interest', href: '/explore' },
     ],
   },
   {
     title: 'Aloha Travels',
     links: [
-      { label: 'About', href: '/about' },
-      { label: 'Contact', href: '/contact' },
+      { label: 'About Us', href: '/about' },
+      { label: 'Contact Us', href: '/contact' },
       { label: 'Plan Your Trip', href: '/contact' },
     ],
   },
   {
     title: 'Discover',
     links: [
-      { label: 'Maldives Guide', href: '/explore' },
-      { label: 'Islands', href: '/guest-houses' },
-      { label: 'Atolls', href: '/resorts' },
+      { label: 'Safari Yachts', href: '/safari-yachts' },
+      { label: 'Packages', href: '/packages' },
+      { label: 'Explore by Interest', href: '/explore' },
     ],
   },
 ]

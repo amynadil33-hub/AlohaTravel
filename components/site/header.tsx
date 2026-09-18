@@ -46,8 +46,8 @@ export function Header({
       <div className={cn('mx-auto flex max-w-7xl items-center justify-between px-5 lg:px-8', homepage ? 'gap-4' : 'gap-6')}>
         <Logo onDark={onDark} prominent={homepage} />
 
-        <nav className={cn('hidden items-center lg:flex', homepage ? 'gap-5 xl:gap-7' : 'gap-7')} aria-label="Primary">
-          {navLinks.slice(1, 6).map((link) => {
+        <nav className={cn('hidden items-center xl:flex', homepage ? 'gap-3 2xl:gap-5' : 'gap-3 2xl:gap-5')} aria-label="Primary">
+          {navLinks.map((link) => {
             const active = pathname === link.href
             return (
               <Link
@@ -55,7 +55,7 @@ export function Header({
                 href={link.href}
                 className={cn(
                   'relative font-medium transition-colors',
-                  homepage ? 'text-[0.82rem] xl:text-sm' : 'text-sm',
+                  homepage ? 'text-[0.72rem] 2xl:text-xs' : 'text-xs 2xl:text-[0.82rem]',
                   onDark
                     ? 'text-white/85 hover:text-white'
                     : active
@@ -78,22 +78,11 @@ export function Header({
               href={WHATSAPP_URL}
               target="_blank"
               rel="noreferrer"
-              className="hidden items-center gap-2 text-sm font-bold text-primary transition-colors hover:text-secondary xl:inline-flex"
+              className="hidden items-center gap-2 text-sm font-bold text-primary transition-colors hover:text-secondary 2xl:inline-flex"
             >
               <MessageCircle className="size-4 text-emerald-600" aria-hidden="true" />
               +960 797 4004
             </a>
-          )}
-          {!homepage && (
-            <Link
-              href="/about"
-              className={cn(
-                'hidden text-sm font-medium transition-colors lg:inline-flex',
-                onDark ? 'text-white/85 hover:text-white' : 'text-foreground/70 hover:text-primary',
-              )}
-            >
-              About
-            </Link>
           )}
           <Button
             size="pill"

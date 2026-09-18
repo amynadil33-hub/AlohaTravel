@@ -29,7 +29,7 @@ export function MobileNav({ onDark = false }: { onDark?: boolean }) {
             size="icon"
             aria-label="Open menu"
             className={cn(
-              'lg:hidden',
+              'xl:hidden',
               onDark ? 'text-white hover:bg-white/15' : 'text-foreground',
             )}
           />
