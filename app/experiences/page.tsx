@@ -6,7 +6,7 @@ import { PageShell } from '@/components/site/page-shell'
 import { PageHero } from '@/components/site/page-hero'
 import { Reveal } from '@/components/site/reveal'
 import { CtaBand } from '@/components/site/cta-band'
-import { experiences, properties } from '@/lib/data'
+import { experiences, resorts } from '@/lib/data'
 import { cn } from '@/lib/utils'
 
 export const metadata: Metadata = {
@@ -29,7 +29,7 @@ export default function ExperiencesPage() {
       <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
         <div className="flex flex-col gap-20 md:gap-28">
           {experiences.map((exp, i) => {
-            const related = properties.filter((p) =>
+            const related = resorts.filter((p) =>
               exp.relatedPropertyIds.includes(p.id),
             )
             const flip = i % 2 === 1

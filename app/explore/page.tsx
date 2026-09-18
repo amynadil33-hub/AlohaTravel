@@ -5,7 +5,7 @@ import { PropertyBrowser } from '@/components/site/property-browser'
 import { MoodGrid } from '@/components/explore/mood-grid'
 import { SectionHeader } from '@/components/site/section-header'
 import { CtaBand } from '@/components/site/cta-band'
-import { properties, interestBySlug } from '@/lib/data'
+import { resorts, interestBySlug } from '@/lib/data'
 import type { InterestSlug } from '@/lib/types'
 
 export const metadata: Metadata = {
@@ -55,12 +55,12 @@ export default async function ExplorePage({
 
       <section className="mx-auto max-w-6xl px-5 pb-16 pt-6 md:px-8 md:pb-24">
         <SectionHeader
-          eyebrow={matched ? `Stays for ${matched.name.toLowerCase()}` : 'The full collection'}
-          title={matched ? `Islands made for ${matched.name.toLowerCase()}` : 'Browse every stay'}
+          eyebrow={matched ? `Resorts for ${matched.name.toLowerCase()}` : 'Approved collection'}
+          title={matched ? `Resorts made for ${matched.name.toLowerCase()}` : 'Browse approved resorts'}
           className="mb-10"
         />
         <PropertyBrowser
-          items={properties}
+          items={resorts}
           initialInterest={interest as InterestSlug | undefined}
         />
       </section>
