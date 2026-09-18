@@ -83,7 +83,7 @@ export function Footer() {
             <Mail className="size-4 text-secondary" /> travels@alohamaldives.com
           </a>
           <a
-            href={WHATSAPP_URL}
+            href="tel:+9607974004"
             className="inline-flex items-center gap-2 transition-colors hover:text-white"
           >
             <Phone className="size-4 text-secondary" /> +960 797 4004

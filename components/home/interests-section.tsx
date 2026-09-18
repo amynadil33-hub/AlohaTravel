@@ -16,7 +16,7 @@ import { Reveal } from '@/components/site/reveal'
 const services = [
   { title: 'Luxury Resorts', copy: 'Private-island stays, overwater villas, and refined resort experiences.', image: '/images/resort-baros.png', icon: House, accent: 'bg-emerald-600', href: '/resorts' },
   { title: 'Guesthouses & Hotels', copy: 'Comfortable stays on local islands with a closer connection to island life.', image: '/images/guesthouse-dhigurah.png', icon: Building2, accent: 'bg-accent', href: '/guest-houses' },
-  { title: 'Safari Yachts', copy: 'A different way to discover the Maldives across its atolls and lagoons.', image: '/images/exp-sunset-cruise.png', icon: Ship, accent: 'bg-primary' },
+  { title: 'Safari Yachts', copy: 'A different way to discover the Maldives across its atolls and lagoons.', image: '/images/exp-sunset-cruise.png', icon: Ship, accent: 'bg-primary', href: '/safari-yachts' },
   { title: 'Transfers', copy: 'Coordinated connections between the airport, resorts, and local islands.', image: '/images/hero-lagoon.png', icon: Plane, accent: 'bg-secondary' },
   { title: 'Experiences & Excursions', copy: 'Ocean encounters, cruises, fishing, and memorable island adventures.', image: '/images/exp-whaleshark.png', icon: Anchor, accent: 'bg-emerald-600', href: '/experiences' },
   { title: 'Honeymoons', copy: 'Personalised romantic escapes shaped around the way you want to celebrate.', image: '/images/interest-honeymoon.png', icon: Heart, accent: 'bg-rose-500', href: '/explore?interest=honeymoon' },
