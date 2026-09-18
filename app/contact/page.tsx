@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Mail, MessageCircle, Phone, Clock, MapPin } from 'lucide-react'
+import { Mail, MessageCircle, Phone, MapPin } from 'lucide-react'
 import { PageShell } from '@/components/site/page-shell'
 import { PageHero } from '@/components/site/page-hero'
 import { Reveal } from '@/components/site/reveal'
@@ -10,7 +10,7 @@ import { WHATSAPP_URL } from '@/components/site/nav-links'
 export const metadata: Metadata = {
   title: 'Contact & Trip Planning',
   description:
-    'Start planning your Maldives escape with Aloha Travels. Send us an inquiry or message us on WhatsApp — we reply within one business day.',
+    'Start planning your Maldives escape with Aloha Travels. Send us an enquiry or message us on WhatsApp.',
 }
 
 const details = [
@@ -45,9 +45,9 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Let's talk"
         title="Plan your Maldives escape"
-        description="Share your dates and travel dreams. A real person from our team will reply within one business day — no bots, no booking fees."
+        description="Share your dates, interests, preferences, and budget with the Aloha Travels team."
         image="/images/contact-beach.png"
-        breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Contact' }]}
+        breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Contact Us' }]}
       />
 
       <section className="py-20 md:py-24">
@@ -55,7 +55,7 @@ export default function ContactPage() {
           {/* Form */}
           <Reveal className="order-2 lg:order-1">
             <div className="mb-8 space-y-2">
-              <span className="eyebrow text-secondary">Send an inquiry</span>
+              <span className="eyebrow text-secondary">Send an enquiry</span>
               <h2 className="font-serif text-3xl text-primary md:text-4xl">
                 Tell us about your trip
               </h2>
@@ -95,23 +95,6 @@ export default function ContactPage() {
                   </li>
                 ))}
               </ul>
-
-              <div className="mt-8 flex items-start gap-4 border-t border-border pt-6">
-                <span className="mt-0.5 flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <Clock className="size-[18px]" aria-hidden="true" />
-                </span>
-                <div>
-                  <div className="text-xs uppercase tracking-[0.14em] text-muted-foreground">
-                    Hours
-                  </div>
-                  <div className="text-[0.95rem] font-medium text-foreground">
-                    Sun–Fri, 9am – 6pm (GMT+5)
-                  </div>
-                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                    WhatsApp messages are answered around the clock.
-                  </p>
-                </div>
-              </div>
             </div>
           </Reveal>
         </div>

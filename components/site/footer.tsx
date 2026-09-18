@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { AtSign, Globe, MessageCircle, Mail, Phone, MapPin } from 'lucide-react'
+import { MessageCircle, Mail, Phone, MapPin } from 'lucide-react'
 import { WHATSAPP_URL } from './nav-links'
 
 const columns = [
@@ -45,12 +45,6 @@ export function Footer() {
               people who know these islands best.
             </p>
             <div className="mt-6 flex gap-3">
-              <SocialLink href="https://instagram.com" label="Instagram">
-                <AtSign className="size-4" />
-              </SocialLink>
-              <SocialLink href="https://allohatravels.com" label="Website">
-                <Globe className="size-4" />
-              </SocialLink>
               <SocialLink href={WHATSAPP_URL} label="WhatsApp">
                 <MessageCircle className="size-4" />
               </SocialLink>

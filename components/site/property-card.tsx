@@ -32,7 +32,7 @@ export function PropertyCard({
         />
         <div className="absolute left-4 top-4">
           <Tag variant="onImage" className="capitalize">
-            {property.type === 'resort' ? 'Resort' : 'Guest House'}
+            {property.type === 'resort' ? 'Resort' : 'Hotel / Guest House'}
           </Tag>
         </div>
       </div>

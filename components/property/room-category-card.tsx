@@ -19,10 +19,6 @@ export function RoomCategoryCard({ room }: { room: RoomCategory }) {
           sizes="(min-width: 768px) 33vw, 100vw"
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
-        <span className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-primary shadow-sm">
-          from ${room.priceFrom.toLocaleString()}
-          <span className="font-normal text-muted-foreground"> / night</span>
-        </span>
       </div>
 
       {photos.length > 1 && (

@@ -32,7 +32,7 @@ const values = [
   {
     icon: Compass,
     title: 'Details taken care of',
-    body: 'From resorts and guest houses to holiday packages and yacht experiences, we take care of the details.',
+    body: 'From resorts, hotels and guest houses to holiday packages and yacht experiences, we take care of the details.',
   },
 ]
 
@@ -44,7 +44,7 @@ export default function AboutPage() {
         title="Personalised Maldives holidays"
         description="At Aloha Travels, we create personalised Maldives holidays built around your interests, preferences, and budget."
         image="/images/made-in-maldives.png"
-        breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'About' }]}
+        breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'About Us' }]}
       />
 
       {/* Intro split */}
@@ -76,9 +76,9 @@ export default function AboutPage() {
                 service.
               </p>
               <p>
-                From resorts and guest houses to holiday packages and yacht
-                experiences, we take care of the details so you can simply enjoy
-                the Maldives.
+                From resorts, hotels and guest houses to holiday packages and
+                yacht experiences, we take care of the details so you can simply
+                enjoy the Maldives.
               </p>
             </div>
           </Reveal>
@@ -118,7 +118,7 @@ export default function AboutPage() {
 
       <CtaBand
         title="Let's plan your Maldives"
-        copy="Tell us how you like to travel and we'll design an itinerary around it — no obligation, no pressure."
+        copy="Tell us how you like to travel and we'll help shape a Maldives itinerary around you."
         primaryLabel="Start your trip"
         primaryHref="/contact"
       />

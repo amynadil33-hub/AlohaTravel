@@ -59,7 +59,7 @@ export default async function StayPage({
     .slice(0, 3)
 
   const backHref = property.type === 'resort' ? '/resorts' : '/guest-houses'
-  const backLabel = property.type === 'resort' ? 'All resorts' : 'All guest houses'
+  const backLabel = property.type === 'resort' ? 'All resorts' : 'All hotels & guest houses'
 
   return (
     <PageShell>

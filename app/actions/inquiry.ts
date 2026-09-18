@@ -41,6 +41,6 @@ export async function submitInquiry(
 
   return {
     ok: true,
-    message: `Thank you, ${name.split(' ')[0]}! Our team will be in touch within 24 hours to start planning your Maldives.`,
+    message: `Thank you, ${name.split(' ')[0]}! Your enquiry has been submitted to the Aloha Travels team.`,
   }
 }

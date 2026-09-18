@@ -6,9 +6,9 @@ import { CtaBand } from '@/components/site/cta-band'
 import { guestHouses } from '@/lib/data'
 
 export const metadata: Metadata = {
-  title: 'Maldives Guest Houses',
+  title: 'Maldives Hotels & Guest Houses',
   description:
-    'Boutique guest houses on local Maldivian islands — authentic island life, bikini beaches and warm hospitality, curated by Aloha Travels.',
+    'Explore hotels and guest houses on local Maldivian islands, curated by Aloha Travels.',
 }
 
 export default function GuestHousesPage() {
@@ -16,10 +16,10 @@ export default function GuestHousesPage() {
     <PageShell>
       <PageHero
         eyebrow="Local islands"
-        title="Guest Houses"
-        description="Stay among the community. Home-cooked breakfasts, island bikes and the real rhythm of Maldivian life — at a fraction of resort prices."
+        title="Hotels & Guest Houses"
+        description="Explore stays on local Maldivian islands and experience a different side of the destination."
         image="/images/guesthouse-dhigurah.png"
-        breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Guest Houses' }]}
+        breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Hotels & Guest Houses' }]}
       />
       <section className="mx-auto max-w-6xl px-5 py-14 md:px-8 md:py-20">
         <PropertyBrowser items={guestHouses} />

@@ -89,12 +89,9 @@ export function InquiryForm({
         />
       </Field>
 
-      <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-xs leading-relaxed text-muted-foreground">
-          We reply within one business day. No booking fees, ever.
-        </p>
+      <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:items-center sm:justify-end">
         <Button type="submit" size="pill" variant="ocean" disabled={pending}>
-          {pending ? 'Sending…' : 'Send inquiry'}
+          {pending ? 'Sending…' : 'Send enquiry'}
           {!pending ? (
             <Send className="size-4" data-icon="inline-end" aria-hidden="true" />
           ) : null}

@@ -21,7 +21,7 @@ export default function ExperiencesPage() {
       <PageHero
         eyebrow="Beyond the villa"
         title="Experiences"
-        description="The Maldives isn't only where you stay — it's what you do. These are the moments our guests remember most."
+        description="The Maldives isn't only where you stay — it's what you do. Explore experiences that can shape your time in the islands."
         image="/images/exp-manta.png"
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Experiences' }]}
       />

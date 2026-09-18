@@ -6,7 +6,7 @@ import { Reveal } from '@/components/site/reveal'
 
 export function CtaBand({
   title = 'Let\u2019s plan your Maldives.',
-  copy = 'Tell us how you dream of spending your days. We\u2019ll shape a shortlist of stays and experiences around it — no obligation, no pressure.',
+  copy = 'Tell us how you dream of spending your days. We\u2019ll help shape a shortlist of stays and experiences around it.',
   primaryLabel = 'Start planning',
   primaryHref = '/contact',
 }: {
