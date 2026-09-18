@@ -8,7 +8,7 @@ import { guestHouses } from '@/lib/data'
 export const metadata: Metadata = {
   title: 'Maldives Guest Houses',
   description:
-    'Boutique guest houses on local Maldivian islands — authentic island life, bikini beaches and warm hospitality, curated by Alloha Travels & Tours.',
+    'Boutique guest houses on local Maldivian islands — authentic island life, bikini beaches and warm hospitality, curated by Aloha Travels.',
 }
 
 export default function GuestHousesPage() {

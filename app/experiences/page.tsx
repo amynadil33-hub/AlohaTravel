@@ -12,7 +12,7 @@ import { cn } from '@/lib/utils'
 export const metadata: Metadata = {
   title: 'Maldives Experiences',
   description:
-    'Whale sharks, manta rays, sunset dhoni cruises and sandbank picnics — unforgettable Maldives experiences curated by Alloha Travels & Tours.',
+    'Whale sharks, manta rays, sunset dhoni cruises and sandbank picnics — unforgettable Maldives experiences curated by Aloha Travels.',
 }
 
 export default function ExperiencesPage() {

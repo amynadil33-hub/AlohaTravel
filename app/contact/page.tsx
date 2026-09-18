@@ -10,21 +10,21 @@ import { WHATSAPP_URL } from '@/components/site/nav-links'
 export const metadata: Metadata = {
   title: 'Contact & Trip Planning',
   description:
-    'Start planning your Maldives escape with Alloha Travels & Tours. Send us an inquiry or message us on WhatsApp — we reply within one business day.',
+    'Start planning your Maldives escape with Aloha Travels. Send us an inquiry or message us on WhatsApp — we reply within one business day.',
 }
 
 const details = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'hello@allohatravels.com',
-    href: 'mailto:hello@allohatravels.com',
+    value: 'travels@alohamaldives.com',
+    href: 'mailto:travels@alohamaldives.com',
   },
   {
     icon: Phone,
     label: 'Phone',
-    value: '+960 331 2000',
-    href: 'tel:+9603312000',
+    value: '+960 797 4004',
+    href: 'tel:+9607974004',
   },
   {
     icon: MessageCircle,
@@ -35,7 +35,7 @@ const details = [
   {
     icon: MapPin,
     label: 'Office',
-    value: 'Boduthakurufaanu Magu, Malé, Maldives',
+    value: 'Malé, Maldives',
   },
 ]
 

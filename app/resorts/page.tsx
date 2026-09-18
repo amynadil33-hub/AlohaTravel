@@ -8,7 +8,7 @@ import { resorts } from '@/lib/data'
 export const metadata: Metadata = {
   title: 'Maldives Resorts',
   description:
-    'Private-island resorts across the Maldives — overwater villas, house reefs and barefoot luxury, curated by Alloha Travels & Tours.',
+    'Private-island resorts across the Maldives — overwater villas, house reefs and barefoot luxury, curated by Aloha Travels.',
 }
 
 export default function ResortsPage() {

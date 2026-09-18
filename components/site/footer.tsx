@@ -13,7 +13,7 @@ const columns = [
     ],
   },
   {
-    title: 'Alloha',
+    title: 'Aloha Travels',
     links: [
       { label: 'About', href: '/about' },
       { label: 'Contact', href: '/contact' },
@@ -37,7 +37,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div className="max-w-sm">
             <span className="font-serif text-3xl font-semibold text-white">
-              Alloha<span className="text-secondary">.</span>
+              Aloha Travels<span className="text-secondary">.</span>
             </span>
             <p className="mt-4 text-pretty text-sm leading-relaxed text-deep-foreground/70">
               Curated Maldives travel, shaped by local knowledge. Handpicked island
@@ -80,25 +80,25 @@ export function Footer() {
 
         <div className="mt-14 grid gap-4 border-t border-white/10 pt-8 text-sm text-deep-foreground/70 sm:grid-cols-3">
           <span className="inline-flex items-center gap-2">
-            <MapPin className="size-4 text-secondary" /> Malé, Republic of Maldives
+            <MapPin className="size-4 text-secondary" /> Malé, Maldives
           </span>
           <a
-            href="mailto:hello@allohatravels.com"
+            href="mailto:travels@alohamaldives.com"
             className="inline-flex items-center gap-2 transition-colors hover:text-white"
           >
-            <Mail className="size-4 text-secondary" /> hello@allohatravels.com
+            <Mail className="size-4 text-secondary" /> travels@alohamaldives.com
           </a>
           <a
             href={WHATSAPP_URL}
             className="inline-flex items-center gap-2 transition-colors hover:text-white"
           >
-            <Phone className="size-4 text-secondary" /> +960 700 0000
+            <Phone className="size-4 text-secondary" /> +960 797 4004
           </a>
         </div>
 
         <div className="mt-8 flex flex-col items-center justify-between gap-2 border-t border-white/10 pt-8 text-xs text-deep-foreground/60 sm:flex-row">
-          <span>Alloha Travels &amp; Tours — Maldives</span>
-          <span>© {new Date().getFullYear()} Alloha Travels &amp; Tours. All rights reserved.</span>
+          <span>Aloha Travels — Maldives</span>
+          <span>© {new Date().getFullYear()} Aloha Travels. All rights reserved.</span>
         </div>
       </div>
     </footer>
