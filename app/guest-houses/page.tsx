@@ -17,7 +17,7 @@ export default function GuestHousesPage() {
         eyebrow="Local islands"
         title="Hotels & Guest Houses"
         description="Explore stays on local Maldivian islands and experience a different side of the destination."
-        image="/images/split-localisland.png"
+        image="/images/real-avanti-guesthouse.webp"
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Hotels & Guest Houses' }]}
       />
       <section className="mx-auto max-w-6xl px-5 py-14 md:px-8 md:py-20">
@@ -31,6 +31,7 @@ export default function GuestHousesPage() {
       <CtaBand
         title="Plan a local-island stay with us."
         copy="Tell us what you're looking for and we'll help shape the next steps."
+        image="/images/real-h78-seaview-room.webp"
       />
     </PageShell>
   )

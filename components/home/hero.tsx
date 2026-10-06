@@ -7,8 +7,8 @@ export function Hero() {
   return (
     <section className="relative flex min-h-[680px] items-center overflow-hidden pt-24 md:min-h-[730px]">
       <Image
-        src="/images/hero-lagoon.png"
-        alt="Aerial view of a Maldivian lagoon with overwater villas at golden hour"
+        src="/images/real-westin-day-aerial.jpg"
+        alt="Aerial view of a Maldives island resort and overwater villas in a turquoise lagoon"
         fill
         priority
         sizes="100vw"

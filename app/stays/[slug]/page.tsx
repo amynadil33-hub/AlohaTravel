@@ -212,6 +212,9 @@ export default async function StayPage({
                 <ChevronRight className="size-4" aria-hidden="true" />
               </Link>
             </div>
+            <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
+              Destination imagery shown for inspiration. Resort photography may vary.
+            </p>
             <div className="mt-10 grid gap-6 md:grid-cols-3">
               {similar.map((p, i) => (
                 <Reveal key={p.id} delay={i * 80}>

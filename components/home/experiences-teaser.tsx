@@ -4,12 +4,12 @@ import { ArrowUpRight } from 'lucide-react'
 import { Reveal } from '@/components/site/reveal'
 
 const experiences = [
-  { title: 'Honeymoons', image: '/images/interest-honeymoon.png', href: '/explore?interest=honeymoon' },
-  { title: 'Diving', image: '/images/interest-diving.png', href: '/explore?interest=diving' },
-  { title: 'Surfing', image: '/images/interest-watersports.png', href: '/explore?interest=adventure' },
-  { title: 'Island Hopping', image: '/images/exp-sandbank.png', href: '/explore' },
-  { title: 'Wellness', image: '/images/interest-relaxation.png', href: '/explore?interest=relaxation' },
-  { title: 'Family Holidays', image: '/images/interest-family.png', href: '/explore?interest=family' },
+  { title: 'Honeymoons', image: '/images/real-westin-romance.jpg', href: '/explore?interest=honeymoon' },
+  { title: 'Diving', image: '/images/real-dhigufaru-scuba-preparation.jpg', href: '/explore?interest=diving', alt: 'Scuba divers preparing to enter the water in the Maldives' },
+  { title: 'Surfing', image: '/images/real-avanti-surfing.png', href: '/explore?interest=adventure' },
+  { title: 'Island Hopping', image: '/images/real-dhigufaru-sandbank.jpg', href: '/explore' },
+  { title: 'Wellness', image: '/images/real-westin-spa.jpg', href: '/explore?interest=relaxation' },
+  { title: 'Family Holidays', image: '/images/real-westin-kayak-island.jpg', href: '/explore?interest=family' },
 ]
 
 export function ExperiencesTeaser() {
@@ -27,7 +27,7 @@ export function ExperiencesTeaser() {
             <Reveal key={experience.title} delay={index * 55}>
               <Link href={experience.href} className="group relative block overflow-hidden rounded-xl bg-white shadow-[0_16px_38px_-28px_rgba(6,42,82,0.75)]">
                 <div className="relative aspect-[16/10] overflow-hidden">
-                  <Image src={experience.image} alt={experience.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <Image src={experience.image} alt={experience.alt ?? experience.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-deep/70 via-deep/5 to-transparent" />
                   <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5 text-white">
                     <h3 className="font-serif text-2xl font-medium md:text-3xl">{experience.title}</h3>

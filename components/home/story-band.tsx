@@ -38,7 +38,7 @@ export function StoryBand() {
         </div>
 
         <Reveal className="relative min-h-[420px] lg:min-h-[560px]">
-          <Image src="/images/made-in-maldives.png" alt="Maldivian island surrounded by clear blue water" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+          <Image src="/images/real-westin-lacquer-craft.jpg" alt="Traditional Maldivian lacquer craft being made by hand" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-primary/25 via-transparent to-transparent" />
           <div className="absolute bottom-7 left-7 right-7 border-l-4 border-accent bg-white/92 p-5 text-primary backdrop-blur-md md:left-9 md:right-auto md:max-w-sm">
             <p className="font-serif text-2xl">Local knowledge. Personal service.</p>

@@ -27,6 +27,7 @@ export function PropertyBrowser({
     [items],
   )
   const hasVerifiedInterestMappings = items.some((p) => p.interests.length > 0)
+  const includesResorts = items.some((p) => p.type === 'resort')
 
   const filtered = useMemo(() => {
     let list = items.filter((p) => {
@@ -135,11 +136,16 @@ export function PropertyBrowser({
       </div>
 
       {/* Results meta */}
-      <div className="mt-8 flex items-center justify-between border-t border-border pt-6">
+      <div className="mt-8 flex flex-col gap-2 border-t border-border pt-6 sm:flex-row sm:items-end sm:justify-between">
         <p className="text-sm text-muted-foreground">
           <span className="font-semibold text-foreground">{filtered.length}</span>{' '}
           {filtered.length === 1 ? 'stay' : 'stays'}
         </p>
+        {includesResorts && (
+          <p className="max-w-md text-xs leading-relaxed text-muted-foreground sm:text-right">
+            Destination imagery shown for inspiration. Resort photography may vary.
+          </p>
+        )}
         {hasActiveFilters && (
           <Button variant="ghost" size="sm" onClick={reset} className="text-muted-foreground">
             <X className="size-3.5" /> Clear filters

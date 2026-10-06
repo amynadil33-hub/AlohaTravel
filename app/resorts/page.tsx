@@ -18,7 +18,7 @@ export default function ResortsPage() {
         eyebrow="Private islands"
         title="Resorts"
         description="Explore approved Maldives resort identities and contact Aloha Travels to plan a holiday around your interests, preferences, and budget."
-        image="/images/resort-baros.png"
+        image="/images/real-dhigufaru-house-reef.jpg"
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Resorts' }]}
       />
       <section className="mx-auto max-w-6xl px-5 py-14 md:px-8 md:py-20">
@@ -27,6 +27,7 @@ export default function ResortsPage() {
       <CtaBand
         title="Not sure which island is yours?"
         copy="Tell us how you want to spend your days and we'll match you to the resort that fits."
+        image="/images/real-westin-paddleboarding.jpg"
       />
     </PageShell>
   )

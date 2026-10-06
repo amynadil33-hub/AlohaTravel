@@ -14,14 +14,14 @@ import {
 import { Reveal } from '@/components/site/reveal'
 
 const services = [
-  { title: 'Luxury Resorts', copy: 'Private-island stays, overwater villas, and refined resort experiences.', image: '/images/resort-baros.png', icon: House, accent: 'bg-emerald-600', href: '/resorts' },
-  { title: 'Guesthouses & Hotels', copy: 'Comfortable stays on local islands with a closer connection to island life.', image: '/images/guesthouse-dhigurah.png', icon: Building2, accent: 'bg-accent', href: '/guest-houses' },
-  { title: 'Safari Yachts', copy: 'A different way to discover the Maldives across its atolls and lagoons.', image: '/images/exp-sunset-cruise.png', icon: Ship, accent: 'bg-primary', href: '/safari-yachts' },
-  { title: 'Transfers', copy: 'Coordinated connections between the airport, resorts, and local islands.', image: '/images/hero-lagoon.png', icon: Plane, accent: 'bg-secondary' },
-  { title: 'Experiences & Excursions', copy: 'Ocean encounters, cruises, fishing, and memorable island adventures.', image: '/images/exp-whaleshark.png', icon: Anchor, accent: 'bg-emerald-600', href: '/experiences' },
-  { title: 'Honeymoons', copy: 'Personalised romantic escapes shaped around the way you want to celebrate.', image: '/images/interest-honeymoon.png', icon: Heart, accent: 'bg-rose-500', href: '/explore?interest=honeymoon' },
-  { title: 'Family Holidays', copy: 'Island stays and experiences selected with the whole family in mind.', image: '/images/interest-family.png', icon: Users, accent: 'bg-primary', href: '/explore?interest=family' },
-  { title: 'Local Island Experiences', copy: 'Discover Maldivian island communities, beaches, and everyday rhythms.', image: '/images/split-localisland.png', icon: Palmtree, accent: 'bg-accent', href: '/guest-houses' },
+  { title: 'Luxury Resorts', copy: 'Private-island stays, overwater villas, and refined resort experiences.', image: '/images/real-westin-overwater-aerial.jpg', icon: House, accent: 'bg-emerald-600', href: '/resorts' },
+  { title: 'Guesthouses & Hotels', copy: 'Comfortable stays on local islands with a closer connection to island life.', image: '/images/real-h78-hotel-exterior.webp', icon: Building2, accent: 'bg-accent', href: '/guest-houses' },
+  { title: 'Safari Yachts', copy: 'A different way to discover the Maldives across its atolls and lagoons.', image: '/images/real-atoll-villa-yacht.jpg', icon: Ship, accent: 'bg-primary', href: '/safari-yachts' },
+  { title: 'Transfers', copy: 'Coordinated connections between the airport, resorts, and local islands.', image: '/images/real-westin-arrival-jetty.jpg', icon: Plane, accent: 'bg-secondary' },
+  { title: 'Experiences & Excursions', copy: 'Ocean encounters, cruises, fishing, and memorable island adventures.', image: '/images/real-westin-paddleboarding.jpg', icon: Anchor, accent: 'bg-emerald-600', href: '/experiences' },
+  { title: 'Honeymoons', copy: 'Personalised romantic escapes shaped around the way you want to celebrate.', image: '/images/real-westin-sunset-bar.jpg', icon: Heart, accent: 'bg-rose-500', href: '/explore?interest=honeymoon' },
+  { title: 'Family Holidays', copy: 'Island stays and experiences selected with the whole family in mind.', image: '/images/real-westin-family.jpg', icon: Users, accent: 'bg-primary', href: '/explore?interest=family' },
+  { title: 'Local Island Experiences', copy: 'Discover Maldivian island communities, beaches, and everyday rhythms.', image: '/images/real-gaadhiffushi-welcome.jpg', icon: Palmtree, accent: 'bg-accent', href: '/guest-houses' },
 ]
 
 export function InterestsSection() {

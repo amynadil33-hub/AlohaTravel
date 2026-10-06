@@ -14,9 +14,9 @@ export const metadata: Metadata = {
 }
 
 const waysToStay = [
-  { title: 'Private-island resorts', copy: 'Explore overwater villas, beachfront stays, and complete island escapes.', image: '/images/split-resort.png', href: '/resorts', cta: 'Explore resorts' },
-  { title: 'Local islands', copy: 'Stay in guest houses and hotels while discovering a more local side of the Maldives.', image: '/images/split-localisland.png', href: '/guest-houses', cta: 'Explore local stays' },
-  { title: 'Ocean experiences', copy: 'Build memorable days around marine encounters, cruises, fishing, and sandbanks.', image: '/images/exp-manta.png', href: '/experiences', cta: 'Explore experiences' },
+  { title: 'Private-island resorts', copy: 'Explore overwater villas, beachfront stays, and complete island escapes.', image: '/images/real-westin-hero-aerial.jpg', href: '/resorts', cta: 'Explore resorts' },
+  { title: 'Local islands', copy: 'Stay in guest houses and hotels while discovering a more local side of the Maldives.', image: '/images/real-gaadhiffushi-guesthouse-entrance.jpg', href: '/guest-houses', cta: 'Explore local stays' },
+  { title: 'Ocean experiences', copy: 'Build memorable days around marine encounters, cruises, fishing, and sandbanks.', image: '/images/real-westin-snorkelling-aerial.jpg', href: '/experiences', cta: 'Explore experiences' },
 ]
 
 const travelStyles = [
@@ -33,14 +33,14 @@ export default function MaldivesPage() {
         eyebrow="Discover the destination"
         title="The Maldives, Your Way"
         description="Private-island resorts, welcoming local islands, and unforgettable ocean experiences — brought together around the way you want to travel."
-        image="/images/hero-lagoon.png"
+        image="/images/real-westin-neutral-island.jpg"
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Maldives' }]}
       />
 
       <section className="py-16 md:py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 md:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <Reveal className="relative aspect-[4/3] overflow-hidden rounded-3xl">
-            <Image src="/images/made-in-maldives.png" alt="A Maldivian island surrounded by turquoise water" fill sizes="(max-width: 1024px) 100vw, 45vw" className="object-cover" />
+            <Image src="/images/real-dhigufaru-house-reef.jpg" alt="A Maldives island and its house reef meeting clear ocean water" fill sizes="(max-width: 1024px) 100vw, 45vw" className="object-cover" />
           </Reveal>
           <Reveal>
             <span className="eyebrow text-secondary">Welcome to the Maldives</span>
@@ -82,7 +82,7 @@ export default function MaldivesPage() {
         </div>
       </section>
 
-      <CtaBand title="Let’s shape your Maldives holiday." copy="Tell us what matters to you and we’ll help bring together the right stays and experiences." primaryLabel="Plan your Maldives" primaryHref="/contact" />
+      <CtaBand title="Let’s shape your Maldives holiday." copy="Tell us what matters to you and we’ll help bring together the right stays and experiences." primaryLabel="Plan your Maldives" primaryHref="/contact" image="/images/real-westin-parasailing.jpg" />
     </PageShell>
   )
 }

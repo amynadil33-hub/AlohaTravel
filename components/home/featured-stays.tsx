@@ -5,9 +5,9 @@ import { Button } from '@/components/ui/button'
 import { Reveal } from '@/components/site/reveal'
 
 const holidayIdeas = [
-  { title: 'Romantic Maldives Escape', copy: 'A personalised island holiday designed for time together.', image: '/images/interest-romantic.png' },
-  { title: 'Luxury Island Retreat', copy: 'An elevated private-island stay shaped around your preferences.', image: '/images/resort-milaidhoo.png' },
-  { title: 'Family Maldives Holiday', copy: 'A thoughtfully planned Maldives escape for the whole family.', image: '/images/interest-family.png' },
+  { title: 'Romantic Maldives Escape', copy: 'A personalised island holiday designed for time together.', image: '/images/real-westin-private-dinner.jpg' },
+  { title: 'Luxury Island Retreat', copy: 'An elevated private-island stay shaped around your preferences.', image: '/images/real-westin-day-aerial.jpg' },
+  { title: 'Family Maldives Holiday', copy: 'A thoughtfully planned Maldives escape for the whole family.', image: '/images/real-westin-family-dining.jpg' },
 ]
 
 export function FeaturedStays() {
