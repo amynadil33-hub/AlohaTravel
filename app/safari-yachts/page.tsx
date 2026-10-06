@@ -28,7 +28,7 @@ export default function SafariYachtsPage() {
         eyebrow="Maldives by sea"
         title="Safari Yachts"
         description="A sea-based Maldives holiday brings cruising, ocean experiences, and island discovery into one personalised journey."
-        image="/images/exp-sunset-cruise.png"
+        image="/images/real-atoll-villa-yacht-exterior.jpg"
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Safari Yachts' }]}
       />
 
@@ -44,7 +44,7 @@ export default function SafariYachtsPage() {
             <p className="mt-6 rounded-xl border border-secondary/20 bg-secondary/5 p-4 text-sm leading-relaxed text-muted-foreground">Yacht options are planned by enquiry. Specific vessels, routes, schedules, and availability are confirmed during the planning process.</p>
           </Reveal>
           <Reveal className="relative aspect-[4/3] overflow-hidden rounded-3xl">
-            <Image src="/images/exp-fishing.png" alt="A boat travelling through Maldives waters" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+            <Image src="/images/real-atoll-villa-ocean-lounge.jpg" alt="A panoramic lounge aboard a Maldives safari yacht" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
             <span className="absolute bottom-5 left-5 flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 text-sm font-bold text-primary backdrop-blur"><Anchor className="size-4 text-secondary" /> Planned around your interests</span>
           </Reveal>
         </div>
@@ -66,7 +66,7 @@ export default function SafariYachtsPage() {
 
       <section className="px-5 py-16 md:px-8 md:py-20">
         <Reveal className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl bg-deep px-7 py-14 text-white md:px-14 md:py-16">
-          <div className="absolute inset-y-0 right-0 hidden w-2/5 opacity-35 md:block"><Image src="/images/exp-manta.png" alt="" fill sizes="40vw" className="object-cover" /></div>
+          <div className="absolute inset-y-0 right-0 hidden w-2/5 opacity-35 md:block"><Image src="/images/real-atoll-villa-open-sea.jpeg" alt="" fill sizes="40vw" className="object-cover" /></div>
           <div className="relative max-w-2xl">
             <span className="eyebrow text-secondary">Start with a conversation</span>
             <h2 className="mt-4 text-balance text-4xl font-medium md:text-5xl">Plan your Maldives journey by sea</h2>

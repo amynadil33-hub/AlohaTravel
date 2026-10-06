@@ -9,17 +9,19 @@ export function CtaBand({
   copy = 'Tell us how you dream of spending your days. We\u2019ll help shape a shortlist of stays and experiences around it.',
   primaryLabel = 'Start planning',
   primaryHref = '/contact',
+  image = '/images/real-dhigufaru-island-aerial.jpg',
 }: {
   title?: string
   copy?: string
   primaryLabel?: string
   primaryHref?: string
+  image?: string
 }) {
   return (
     <section className="mx-auto max-w-6xl px-5 pb-20 md:px-8 md:pb-28">
       <Reveal className="relative overflow-hidden rounded-[2rem]">
         <Image
-          src="/images/cta-ocean.png"
+          src={image}
           alt=""
           fill
           sizes="(max-width: 1152px) 100vw, 1152px"

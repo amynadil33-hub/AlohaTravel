@@ -43,7 +43,7 @@ export default function AboutPage() {
         eyebrow="Our story"
         title="Personalised Maldives holidays"
         description="At Aloha Travels, we create personalised Maldives holidays built around your interests, preferences, and budget."
-        image="/images/made-in-maldives.png"
+        image="/images/real-gaadhiffushi-atoll.jpg"
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'About Us' }]}
       />
 
@@ -52,8 +52,8 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-2">
           <Reveal className="relative aspect-[4/5] overflow-hidden rounded-3xl">
             <Image
-              src="/images/story-dhigurah.png"
-              alt="A long sandbar stretching into the turquoise ocean in the Maldives"
+              src="/images/real-gaadhiffushi-guest-arrival.jpg"
+              alt="Guests receiving a warm welcome on a Maldivian island"
               fill
               sizes="(min-width: 1024px) 40vw, 100vw"
               className="object-cover"
@@ -121,6 +121,7 @@ export default function AboutPage() {
         copy="Tell us how you like to travel and we'll help shape a Maldives itinerary around you."
         primaryLabel="Start your trip"
         primaryHref="/contact"
+        image="/images/real-h78-ocean-terrace.webp"
       />
     </PageShell>
   )

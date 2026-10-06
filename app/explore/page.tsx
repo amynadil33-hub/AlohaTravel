@@ -32,7 +32,7 @@ export default async function ExplorePage({
             ? matched.description
             : 'Skip the endless scrolling. Tell us the kind of days you want, and we\u2019ll show you the islands that deliver them.'
         }
-        image={matched ? matched.imageUrl : '/images/exp-sandbank.png'}
+        image={matched ? matched.imageUrl : '/images/real-atoll-villa-island-arrival.jpg'}
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'Explore', href: '/explore' },
@@ -61,7 +61,7 @@ export default async function ExplorePage({
         <PropertyBrowser items={resorts} />
       </section>
 
-      <CtaBand />
+      <CtaBand image="/images/real-dhigufaru-fishing.jpg" />
     </PageShell>
   )
 }

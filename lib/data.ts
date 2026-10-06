@@ -15,7 +15,7 @@ export const interests: Interest[] = [
     name: 'Diving',
     slug: 'diving',
     description: 'Explore diving as part of a Maldives holiday planned around your interests.',
-    imageUrl: '/images/interest-diving.png',
+    imageUrl: '/images/real-dhigufaru-scuba-preparation.jpg',
     featured: true,
   },
   {
@@ -23,7 +23,7 @@ export const interests: Interest[] = [
     name: 'Snorkeling',
     slug: 'snorkeling',
     description: 'Make time for snorkelling and discovering the Maldives from the water.',
-    imageUrl: '/images/interest-snorkeling.png',
+    imageUrl: '/images/real-dhigufaru-snorkelling-reef.jpg',
     featured: true,
   },
   {
@@ -31,7 +31,7 @@ export const interests: Interest[] = [
     name: 'Honeymoon',
     slug: 'honeymoon',
     description: 'Plan a Maldives honeymoon around the setting and pace you prefer.',
-    imageUrl: '/images/interest-honeymoon.png',
+    imageUrl: '/images/real-gaadhiffushi-dolphins-sunset.jpg',
     featured: true,
   },
   {
@@ -39,7 +39,7 @@ export const interests: Interest[] = [
     name: 'Family Holidays',
     slug: 'family',
     description: 'Shape a Maldives holiday around the needs and interests of your family.',
-    imageUrl: '/images/interest-family.png',
+    imageUrl: '/images/real-westin-family.jpg',
     featured: true,
   },
   {
@@ -47,7 +47,7 @@ export const interests: Interest[] = [
     name: 'Water Sports',
     slug: 'water-sports',
     description: 'Explore water-based activities as part of your personalised holiday plan.',
-    imageUrl: '/images/interest-watersports.png',
+    imageUrl: '/images/real-westin-parasailing.jpg',
     featured: false,
   },
   {
@@ -55,7 +55,7 @@ export const interests: Interest[] = [
     name: 'Romantic Getaways',
     slug: 'romantic',
     description: 'Create time together in a Maldives holiday shaped around you both.',
-    imageUrl: '/images/interest-romantic.png',
+    imageUrl: '/images/real-westin-romance.jpg',
     featured: false,
   },
   {
@@ -63,7 +63,7 @@ export const interests: Interest[] = [
     name: 'Adventure',
     slug: 'adventure',
     description: 'Build an active Maldives holiday around the experiences that interest you.',
-    imageUrl: '/images/interest-adventure.png',
+    imageUrl: '/images/real-dhigufaru-kitesurfing.jpg',
     featured: false,
   },
   {
@@ -71,7 +71,7 @@ export const interests: Interest[] = [
     name: 'Relaxation',
     slug: 'relaxation',
     description: 'Choose a slower Maldives holiday focused on rest and time away.',
-    imageUrl: '/images/interest-relaxation.png',
+    imageUrl: '/images/real-dhigufaru-spa-pavilion.jpg',
     featured: false,
   },
 ]
@@ -89,7 +89,7 @@ export const experiences: Experience[] = [
     slug: 'whale-sharks',
     description:
       'Explore whale shark experiences as one possible focus for a personalised Maldives enquiry.',
-    imageUrl: '/images/exp-whaleshark.png',
+    imageUrl: '/images/real-dhigufaru-whale-shark-scuba.jpg',
     featured: true,
     relatedPropertyIds: [],
   },
@@ -99,7 +99,7 @@ export const experiences: Experience[] = [
     slug: 'manta-rays',
     description:
       'Explore manta ray experiences as part of planning a Maldives holiday around marine life.',
-    imageUrl: '/images/exp-manta.png',
+    imageUrl: '/images/real-westin-manta-snorkelling.jpg',
     featured: true,
     relatedPropertyIds: [],
   },
@@ -109,7 +109,7 @@ export const experiences: Experience[] = [
     slug: 'scuba-diving',
     description:
       'Include scuba diving in your enquiry if time below the surface is important to your trip.',
-    imageUrl: '/images/interest-diving.png',
+    imageUrl: '/images/real-dhigufaru-scuba-preparation.jpg',
     featured: true,
     relatedPropertyIds: [],
   },
@@ -119,7 +119,7 @@ export const experiences: Experience[] = [
     slug: 'snorkeling',
     description:
       'Include reef snorkelling in a holiday plan shaped around your interests and comfort level.',
-    imageUrl: '/images/interest-snorkeling.png',
+    imageUrl: '/images/real-dhigufaru-snorkelling-reef.jpg',
     featured: false,
     relatedPropertyIds: [],
   },
@@ -129,7 +129,7 @@ export const experiences: Experience[] = [
     slug: 'sunset-cruises',
     description:
       'Consider a sunset cruise as one way to spend time on the water during your holiday.',
-    imageUrl: '/images/exp-sunset-cruise.png',
+    imageUrl: '/images/real-dhigufaru-dolphin-cruise.jpg',
     featured: true,
     relatedPropertyIds: [],
   },
@@ -139,7 +139,7 @@ export const experiences: Experience[] = [
     slug: 'sandbank-escapes',
     description:
       'Explore sandbank experiences as part of a personalised Maldives enquiry.',
-    imageUrl: '/images/exp-sandbank.png',
+    imageUrl: '/images/real-dhigufaru-sandbank.jpg',
     featured: true,
     relatedPropertyIds: [],
   },
@@ -149,7 +149,7 @@ export const experiences: Experience[] = [
     slug: 'surfing',
     description:
       'Include surfing in your enquiry if it is part of how you want to experience the Maldives.',
-    imageUrl: '/images/interest-adventure.png',
+    imageUrl: '/images/real-avanti-surfing.png',
     featured: false,
     relatedPropertyIds: [],
   },
@@ -159,7 +159,7 @@ export const experiences: Experience[] = [
     slug: 'fishing',
     description:
       'Explore fishing experiences as one possible part of your time in the Maldives.',
-    imageUrl: '/images/exp-fishing.png',
+    imageUrl: '/images/real-atoll-villa-fishing.jpeg',
     featured: false,
     relatedPropertyIds: [],
   },
@@ -169,7 +169,7 @@ export const experiences: Experience[] = [
     slug: 'dolphin-cruises',
     description:
       'Consider a dolphin cruise when discussing the ocean experiences that interest you.',
-    imageUrl: '/images/exp-sunset-cruise.png',
+    imageUrl: '/images/real-dhigufaru-sunset-dolphins.jpg',
     featured: false,
     relatedPropertyIds: [],
   },
@@ -179,7 +179,7 @@ export const experiences: Experience[] = [
     slug: 'local-culture',
     description:
       'Explore local-island experiences as part of discovering another side of the Maldives.',
-    imageUrl: '/images/split-localisland.png',
+    imageUrl: '/images/real-gaadhiffushi-guest-arrival.jpg',
     featured: false,
     relatedPropertyIds: [],
   },
@@ -204,7 +204,7 @@ export const properties: Property[] = [
     island: 'Halaveli',
     atoll: 'Alifu Alifu',
     location: 'Halaveli, Alifu Alifu',
-    heroImage: '/images/hero-lagoon.png',
+    heroImage: '/images/real-westin-neutral-island.jpg',
     gallery: [
       '/images/hero-lagoon.png',
       '/images/split-resort.png',
@@ -232,7 +232,7 @@ export const properties: Property[] = [
     island: 'Rangalifinolhu',
     atoll: 'Alifu Dhaalu',
     location: 'Rangalifinolhu, Alifu Dhaalu',
-    heroImage: '/images/split-resort.png',
+    heroImage: '/images/real-dhigufaru-local-island.jpg',
     gallery: [
       '/images/split-resort.png',
       '/images/hero-lagoon.png',
@@ -260,7 +260,7 @@ export const properties: Property[] = [
     island: 'Kihavah Huravalhi',
     atoll: 'Baa',
     location: 'Kihavah Huravalhi, Baa',
-    heroImage: '/images/hero-lagoon.png',
+    heroImage: '/images/real-dhigufaru-sandbank.jpg',
     gallery: [
       '/images/hero-lagoon.png',
       '/images/split-resort.png',
@@ -288,7 +288,7 @@ export const properties: Property[] = [
     island: 'Vommuli',
     atoll: 'Dhaalu',
     location: 'Vommuli, Dhaalu',
-    heroImage: '/images/split-resort.png',
+    heroImage: '/images/real-gaadhiffushi-atoll.jpg',
     gallery: [
       '/images/split-resort.png',
       '/images/hero-lagoon.png',
@@ -316,7 +316,7 @@ export const properties: Property[] = [
     island: 'Maamutaa',
     atoll: 'Gaafu Alifu',
     location: 'Maamutaa, Gaafu Alifu',
-    heroImage: '/images/hero-lagoon.png',
+    heroImage: '/images/real-westin-kayak-island.jpg',
     gallery: [
       '/images/hero-lagoon.png',
       '/images/split-resort.png',
@@ -344,7 +344,7 @@ export const properties: Property[] = [
     island: 'Baros',
     atoll: 'Kaafu',
     location: 'Baros, Kaafu',
-    heroImage: '/images/split-resort.png',
+    heroImage: '/images/real-gaadhiffushi-snorkel-beach.jpg',
     gallery: [
       '/images/split-resort.png',
       '/images/hero-lagoon.png',
@@ -807,37 +807,37 @@ export const moods: Mood[] = [
   {
     title: 'Barefoot Luxury',
     description: 'A refined Maldives holiday shaped around your preferences.',
-    imageUrl: '/images/split-resort.png',
+    imageUrl: '/images/real-atoll-villa-sundeck.jpg',
     href: '/resorts',
   },
   {
     title: 'Underwater Adventure',
     description: 'A Maldives holiday inspired by time on and below the water.',
-    imageUrl: '/images/interest-diving.png',
+    imageUrl: '/images/real-dhigufaru-house-reef.jpg',
     href: '/explore?interest=diving',
   },
   {
     title: 'Romantic Escape',
     description: 'A Maldives escape planned around time together.',
-    imageUrl: '/images/interest-romantic.png',
+    imageUrl: '/images/real-h78-iru-dining.webp',
     href: '/explore?interest=romantic',
   },
   {
     title: 'Island Life',
     description: 'A way to explore local-island settings and everyday rhythms.',
-    imageUrl: '/images/split-localisland.png',
+    imageUrl: '/images/real-h78-iru-reception.webp',
     href: '/guest-houses',
   },
   {
     title: 'Family Time',
     description: 'A holiday shaped around the interests of the whole family.',
-    imageUrl: '/images/interest-family.png',
+    imageUrl: '/images/real-westin-family-dining.jpg',
     href: '/explore?interest=family',
   },
   {
     title: 'Slow & Peaceful',
     description: 'A slower Maldives holiday with time to rest and reset.',
-    imageUrl: '/images/interest-relaxation.png',
+    imageUrl: '/images/real-westin-spa.jpg',
     href: '/explore?interest=relaxation',
   },
 ]

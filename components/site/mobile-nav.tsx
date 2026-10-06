@@ -29,7 +29,7 @@ export function MobileNav({ onDark = false }: { onDark?: boolean }) {
             size="icon"
             aria-label="Open menu"
             className={cn(
-              'xl:hidden',
+              'size-11 xl:hidden',
               onDark ? 'text-white hover:bg-white/15' : 'text-foreground',
             )}
           />
@@ -49,6 +49,7 @@ export function MobileNav({ onDark = false }: { onDark?: boolean }) {
               return (
                 <SheetClose
                   key={link.href}
+                  nativeButton={false}
                   render={<Link href={link.href} />}
                   className={cn(
                     'rounded-lg px-3 py-3 font-serif text-2xl transition-colors',

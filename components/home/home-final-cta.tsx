@@ -7,7 +7,7 @@ import { WHATSAPP_URL } from '@/components/site/nav-links'
 export function HomeFinalCta() {
   return (
     <section className="relative isolate overflow-hidden py-16 text-white md:py-20">
-      <Image src="/images/cta-ocean.png" alt="Clear Maldives ocean and coral reef" fill sizes="100vw" className="-z-20 object-cover" />
+      <Image src="/images/real-dhigufaru-island-aerial.jpg" alt="Aerial view of Dhigufaru Island Resort and its lagoon" fill sizes="100vw" className="-z-20 object-cover" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/70 via-secondary/45 to-deep/55" />
       <div className="mx-auto max-w-4xl px-5 text-center md:px-8">
         <span className="eyebrow text-white">Your journey, personally planned</span>

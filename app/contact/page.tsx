@@ -46,7 +46,7 @@ export default function ContactPage() {
         eyebrow="Let's talk"
         title="Plan your Maldives escape"
         description="Share your dates, interests, preferences, and budget with the Aloha Travels team."
-        image="/images/contact-beach.png"
+        image="/images/real-dhigufaru-beach.jpg"
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Contact Us' }]}
       />
 

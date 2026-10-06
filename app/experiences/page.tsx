@@ -22,7 +22,7 @@ export default function ExperiencesPage() {
         eyebrow="Beyond the villa"
         title="Experiences"
         description="The Maldives isn't only where you stay — it's what you do. Explore experiences that can shape your time in the islands."
-        image="/images/exp-manta.png"
+        image="/images/real-dhigufaru-kitesurfing.jpg"
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Experiences' }]}
       />
 
@@ -94,6 +94,7 @@ export default function ExperiencesPage() {
       <CtaBand
         title="Build a trip around the moments."
         copy="Tell us which experiences excite you most and we'll design an itinerary around them."
+        image="/images/real-dhigufaru-sunset-fishing.jpg"
       />
     </PageShell>
   )

@@ -15,9 +15,9 @@ export const metadata: Metadata = {
 }
 
 const holidayIdeas = [
-  { title: 'Romantic Maldives Escape', copy: 'A romantic island holiday shaped around the way you want to spend time together.', image: '/images/interest-romantic.png', eyebrow: 'For two' },
-  { title: 'Luxury Island Retreat', copy: 'A refined private-island escape planned around your preferred setting and travel style.', image: '/images/resort-milaidhoo.png', eyebrow: 'Island luxury' },
-  { title: 'Family Maldives Holiday', copy: 'A considered Maldives journey with stays and experiences selected for the whole family.', image: '/images/interest-family.png', eyebrow: 'Travel together' },
+  { title: 'Romantic Maldives Escape', copy: 'A romantic island holiday shaped around the way you want to spend time together.', image: '/images/real-gaadhiffushi-dolphins-sunset.jpg', eyebrow: 'For two' },
+  { title: 'Luxury Island Retreat', copy: 'A refined private-island escape planned around your preferred setting and travel style.', image: '/images/real-h78-terrace-dining.webp', eyebrow: 'Island luxury' },
+  { title: 'Family Maldives Holiday', copy: 'A considered Maldives journey with stays and experiences selected for the whole family.', image: '/images/real-avanti-twin-room.png', eyebrow: 'Travel together' },
 ]
 
 const planningPoints = [
@@ -33,7 +33,7 @@ export default function PackagesPage() {
         eyebrow="Holiday inspiration"
         title="Handpicked Maldives Holidays"
         description="Start with an idea, then let Aloha Travels personalise the details around your interests, preferences, and budget."
-        image="/images/resort-milaidhoo.png"
+        image="/images/real-westin-hero-aerial.jpg"
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Packages' }]}
       />
 
