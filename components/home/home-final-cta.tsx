@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, MessageCircle } from 'lucide-react'
+import { ArrowRight, Mail } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { WHATSAPP_URL } from '@/components/site/nav-links'
+import { EMAIL_ENQUIRY_URL } from '@/components/site/nav-links'
 
 export function HomeFinalCta() {
   return (
@@ -18,9 +18,9 @@ export function HomeFinalCta() {
             Start planning your holiday
             <ArrowRight className="size-4" data-icon="inline-end" aria-hidden="true" />
           </Button>
-          <Button size="xl" variant="on-dark" render={<a href={WHATSAPP_URL} target="_blank" rel="noreferrer" />}>
-            <MessageCircle className="size-4" data-icon="inline-start" aria-hidden="true" />
-            WhatsApp us
+          <Button size="xl" variant="on-dark" render={<a href={EMAIL_ENQUIRY_URL} />}>
+            <Mail className="size-4" data-icon="inline-start" aria-hidden="true" />
+            Email us
           </Button>
         </div>
       </div>

@@ -1,16 +1,15 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Mail, MessageCircle, Phone, MapPin } from 'lucide-react'
+import { Mail, Phone, MapPin } from 'lucide-react'
 import { PageShell } from '@/components/site/page-shell'
 import { PageHero } from '@/components/site/page-hero'
 import { Reveal } from '@/components/site/reveal'
 import { InquiryForm } from '@/components/site/inquiry-form'
-import { WHATSAPP_URL } from '@/components/site/nav-links'
 
 export const metadata: Metadata = {
   title: 'Contact & Trip Planning',
   description:
-    'Start planning your Maldives escape with Aloha Travels. Send us an enquiry or message us on WhatsApp.',
+    'Start planning your Maldives escape with Aloha Travels. Send us an enquiry or contact the team directly by email or telephone.',
 }
 
 const details = [
@@ -25,12 +24,6 @@ const details = [
     label: 'Phone',
     value: '+960 797 4004',
     href: 'tel:+9607974004',
-  },
-  {
-    icon: MessageCircle,
-    label: 'WhatsApp',
-    value: 'Chat with a planner',
-    href: WHATSAPP_URL,
   },
   {
     icon: MapPin,

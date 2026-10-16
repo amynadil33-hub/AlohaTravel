@@ -6,6 +6,7 @@ import { InterestsSection } from '@/components/home/interests-section'
 import { FeaturedStays } from '@/components/home/featured-stays'
 import { ExperiencesTeaser } from '@/components/home/experiences-teaser'
 import { StoryBand } from '@/components/home/story-band'
+import { UkulhasSandbankFeature } from '@/components/home/ukulhas-sandbank-feature'
 import { HomeFinalCta } from '@/components/home/home-final-cta'
 
 export default function HomePage() {
@@ -18,6 +19,7 @@ export default function HomePage() {
         <InterestsSection />
         <FeaturedStays />
         <StoryBand />
+        <UkulhasSandbankFeature />
         <ExperiencesTeaser />
         <HomeFinalCta />
       </main>

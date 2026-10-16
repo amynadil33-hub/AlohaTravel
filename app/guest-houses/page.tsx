@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
+import { approvedGuestHouses } from '@/lib/data'
+import { PropertyBrowser } from '@/components/site/property-browser'
 import { PageShell } from '@/components/site/page-shell'
 import { PageHero } from '@/components/site/page-hero'
-import { EmptyState } from '@/components/site/empty-state'
 import { CtaBand } from '@/components/site/cta-band'
 
 export const metadata: Metadata = {
   title: 'Maldives Hotels & Guest Houses',
   description:
-    'Contact Aloha Travels to plan a hotel or guest-house stay while our approved collection is being prepared.',
+    'Explore approved hotels and guest houses for a personalised local-island stay with Aloha Travels.',
 }
 
 export default function GuestHousesPage() {
@@ -21,17 +22,13 @@ export default function GuestHousesPage() {
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Hotels & Guest Houses' }]}
       />
       <section className="mx-auto max-w-6xl px-5 py-14 md:px-8 md:py-20">
-        <EmptyState
-          title="Approved listings are being prepared"
-          description="We’re preparing our approved hotel and guest-house collection. Contact Aloha Travels and we’ll help you plan your Maldives stay."
-          actionLabel="Send an enquiry"
-          actionHref="/contact"
-        />
+        <PropertyBrowser items={approvedGuestHouses} />
       </section>
       <CtaBand
         title="Plan a local-island stay with us."
         copy="Tell us what you're looking for and we'll help shape the next steps."
         image="/images/real-h78-seaview-room.webp"
+        showSecondary={false}
       />
     </PageShell>
   )

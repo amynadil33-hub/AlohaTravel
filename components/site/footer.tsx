@@ -3,10 +3,9 @@ import {
   ArrowUpRight,
   Mail,
   MapPin,
-  MessageCircle,
   Phone,
 } from 'lucide-react'
-import { WHATSAPP_URL } from './nav-links'
+import { EMAIL_ENQUIRY_URL, PHONE_URL } from './nav-links'
 
 const navigationGroups = [
   {
@@ -102,16 +101,15 @@ export function Footer() {
           >
             <span>travels@alohamaldives.com</span>
           </ContactItem>
-          <ContactItem icon={Phone} label="Call" href="tel:+9607974004">
+          <ContactItem icon={Phone} label="Call" href={PHONE_URL}>
             <span>+960 797 4004</span>
           </ContactItem>
           <ContactItem
-            icon={MessageCircle}
-            label="WhatsApp"
-            href={WHATSAPP_URL}
-            external
+            icon={Mail}
+            label="Enquire"
+            href={EMAIL_ENQUIRY_URL}
           >
-            <span>Start a conversation</span>
+            <span>Email our team</span>
           </ContactItem>
         </address>
 

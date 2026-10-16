@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import { Menu, MessageCircle } from 'lucide-react'
+import { Mail, Menu } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
   Sheet,
@@ -14,7 +14,7 @@ import {
 } from '@/components/ui/sheet'
 import { cn } from '@/lib/utils'
 import { Logo } from './logo'
-import { navLinks, WHATSAPP_URL } from './nav-links'
+import { EMAIL_ENQUIRY_URL, navLinks } from './nav-links'
 
 export function MobileNav({ onDark = false }: { onDark?: boolean }) {
   const [open, setOpen] = useState(false)
@@ -70,10 +70,10 @@ export function MobileNav({ onDark = false }: { onDark?: boolean }) {
             <Button
               size="xl"
               variant="ocean-outline"
-              render={<a href={WHATSAPP_URL} target="_blank" rel="noreferrer" />}
+              render={<a href={EMAIL_ENQUIRY_URL} />}
             >
-              <MessageCircle className="size-4" />
-              Chat on WhatsApp
+              <Mail className="size-4" />
+              Email us
             </Button>
           </div>
         </div>

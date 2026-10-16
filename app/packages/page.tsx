@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Heart, MessageCircle, SlidersHorizontal, Sparkles } from 'lucide-react'
+import { ArrowRight, Heart, Mail, SlidersHorizontal, Sparkles } from 'lucide-react'
 import { PageShell } from '@/components/site/page-shell'
 import { PageHero } from '@/components/site/page-hero'
 import { SectionHeader } from '@/components/site/section-header'
 import { Reveal } from '@/components/site/reveal'
 import { Button } from '@/components/ui/button'
-import { WHATSAPP_URL } from '@/components/site/nav-links'
+import { EMAIL_ENQUIRY_URL } from '@/components/site/nav-links'
 
 export const metadata: Metadata = {
   title: 'Maldives Holiday Packages',
@@ -76,7 +76,7 @@ export default function PackagesPage() {
           <p className="mt-4 max-w-2xl leading-relaxed text-white/80">Share what you have in mind and Aloha Travels will help you explore suitable options.</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button size="xl" className="bg-white text-primary hover:bg-white/90" render={<Link href="/contact" />}>Start planning<ArrowRight className="size-4" data-icon="inline-end" /></Button>
-            <Button size="xl" variant="on-dark" render={<a href={WHATSAPP_URL} target="_blank" rel="noreferrer" />}><MessageCircle className="size-4" data-icon="inline-start" />WhatsApp us</Button>
+            <Button size="xl" variant="on-dark" render={<a href={EMAIL_ENQUIRY_URL} />}><Mail className="size-4" data-icon="inline-start" />Email us</Button>
           </div>
         </Reveal>
       </section>

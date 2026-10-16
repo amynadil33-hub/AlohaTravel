@@ -784,10 +784,113 @@ export const properties: Property[] = [
     featured: false,
     published: true,
   },
+  {
+    id: 'prop-lagoon-villa-thoddoo',
+    name: 'Lagoon Villa Thoddoo',
+    slug: 'lagoon-villa-thoddoo',
+    type: 'guest-house',
+    shortDescription:
+      'A guest-house stay with a garden on the local island of Thoddoo.',
+    description:
+      'Lagoon Villa Thoddoo is located on Thoddoo in Alif Alif Atoll. The property has a garden, Wi-Fi, a restaurant and room service. Its air-conditioned rooms include private bathrooms. Contact Aloha Travels to plan a personalised stay.',
+    island: 'Thoddoo',
+    atoll: 'Alif Alif Atoll',
+    location: 'Thoddoo, Alif Alif Atoll',
+    heroImage: '/images/guest-houses/lagoon-villa-thoddoo-exterior.jpg',
+    gallery: [
+      '/images/guest-houses/lagoon-villa-thoddoo-exterior.jpg',
+      '/images/guest-houses/lagoon-villa-thoddoo-room.jpg',
+      '/images/guest-houses/lagoon-villa-thoddoo-terrace.jpg',
+      '/images/guest-houses/lagoon-villa-thoddoo-bathroom.jpg',
+    ],
+    tags: ['Guest House', 'Garden', 'Restaurant'],
+    interests: [],
+    experiences: [],
+    facilities: [
+      'Garden',
+      'Wi-Fi',
+      'Restaurant',
+      'Room service',
+      'Air-conditioned rooms',
+      'Private bathrooms',
+    ],
+    highlights: [],
+    roomCategories: [],
+    featured: false,
+    published: true,
+  },
+  {
+    id: 'prop-belena-maldives',
+    name: 'Belena Maldives',
+    slug: 'belena-maldives',
+    type: 'guest-house',
+    shortDescription:
+      'A local-island stay with a swimming pool on Thoddoo.',
+    description:
+      'Belena Maldives is located on Thoddoo in Alif Alif Atoll. The property has a swimming pool and offers a 14 m² Standard Room and a 19 m² Suite Room. Contact Aloha Travels to plan a personalised stay.',
+    island: 'Thoddoo',
+    atoll: 'Alif Alif Atoll',
+    location: 'Thoddoo, Alif Alif Atoll',
+    heroImage: '/images/guest-houses/belena-maldives-exterior.jpg',
+    gallery: [
+      '/images/guest-houses/belena-maldives-exterior.jpg',
+      '/images/guest-houses/belena-maldives-pool.jpg',
+      '/images/guest-houses/belena-maldives-garden.jpg',
+      '/images/guest-houses/belena-maldives-room.jpg',
+    ],
+    tags: ['Guest House', 'Swimming Pool'],
+    interests: [],
+    experiences: [],
+    facilities: ['Swimming pool'],
+    highlights: ['Standard Room · 14 m²', 'Suite Room · 19 m²'],
+    roomCategories: [],
+    featured: false,
+    published: true,
+  },
+  {
+    id: 'prop-season-paradise',
+    name: 'Season Paradise',
+    slug: 'season-paradise',
+    type: 'guest-house',
+    shortDescription:
+      'A hotel stay with a rooftop infinity pool on Thulusdhoo.',
+    description:
+      'Season Paradise is located on Thulusdhoo in Kaafu Atoll. The property has a rooftop infinity pool, dining, Wi-Fi, a spa and a gym. Contact Aloha Travels to plan a personalised stay.',
+    island: 'Thulusdhoo',
+    atoll: 'Kaafu Atoll',
+    location: 'Thulusdhoo, Kaafu Atoll',
+    heroImage: '/images/guest-houses/season-paradise-pool.jpg',
+    gallery: [
+      '/images/guest-houses/season-paradise-aerial.jpg',
+      '/images/guest-houses/season-paradise-pool.jpg',
+      '/images/guest-houses/season-paradise-dining.jpg',
+      '/images/guest-houses/season-paradise-room-view.jpg',
+      '/images/guest-houses/season-paradise-spa.jpg',
+    ],
+    tags: ['Hotel', 'Rooftop Pool', 'Spa'],
+    interests: [],
+    experiences: [],
+    facilities: ['Rooftop infinity pool', 'Dining', 'Wi-Fi', 'Spa', 'Gym'],
+    highlights: [],
+    roomCategories: [],
+    featured: false,
+    published: true,
+  },
 ]
 
 export const resorts = properties.filter((p) => p.type === 'resort')
 export const guestHouses = properties.filter((p) => p.type === 'guest-house')
+
+const approvedGuestHouseIds = new Set([
+  'prop-lagoon-villa-thoddoo',
+  'prop-belena-maldives',
+  'prop-season-paradise',
+])
+
+export const approvedGuestHouses = properties.filter(
+  (property) =>
+    property.type === 'guest-house' && approvedGuestHouseIds.has(property.id),
+)
 
 export const propertyBySlug = (slug: string) =>
   properties.find((p) => p.slug === slug)
