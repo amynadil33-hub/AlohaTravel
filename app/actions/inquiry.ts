@@ -3,6 +3,7 @@
 export interface InquiryFormState {
   ok: boolean
   message: string
+  emailHref?: string
   errors?: Record<string, string>
 }
 
@@ -14,6 +15,9 @@ export async function submitInquiry(
 ): Promise<InquiryFormState> {
   const name = String(formData.get('name') ?? '').trim()
   const contact = String(formData.get('contact') ?? '').trim()
+  const property = String(formData.get('property') ?? '').trim()
+  const travelDates = String(formData.get('travelDates') ?? '').trim()
+  const guests = String(formData.get('guests') ?? '').trim()
   const message = String(formData.get('message') ?? '').trim()
 
   const errors: Record<string, string> = {}
@@ -27,8 +31,26 @@ export async function submitInquiry(
     return { ok: false, message: 'Please fix the highlighted fields.', errors }
   }
 
+  const subject = property
+    ? `Stay enquiry — ${property}`
+    : 'Maldives travel enquiry'
+  const body = [
+    'Hello Aloha Travels,',
+    '',
+    property ? `I would like to enquire about ${property}.` : 'I would like to plan a Maldives holiday.',
+    '',
+    `Name: ${name}`,
+    `Email or phone: ${contact}`,
+    `Travel dates: ${travelDates || 'Not specified'}`,
+    `Guests: ${guests || 'Not specified'}`,
+    '',
+    'Trip details:',
+    message,
+  ].join('\n')
+
   return {
     ok: true,
-    message: `Thanks, ${name.split(' ')[0]}. Your details have not been sent automatically. Please contact Aloha Travels by email or WhatsApp to continue your enquiry.`,
+    message: `Thanks, ${name.split(' ')[0]}. Your details have not been sent automatically. Use the email button below to review and send your enquiry to Aloha Travels.`,
+    emailHref: `mailto:travels@alohamaldives.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`,
   }
 }

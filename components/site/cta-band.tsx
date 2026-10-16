@@ -10,12 +10,14 @@ export function CtaBand({
   primaryLabel = 'Start planning',
   primaryHref = '/contact',
   image = '/images/real-dhigufaru-island-aerial.jpg',
+  showSecondary = true,
 }: {
   title?: string
   copy?: string
   primaryLabel?: string
   primaryHref?: string
   image?: string
+  showSecondary?: boolean
 }) {
   return (
     <section className="mx-auto max-w-6xl px-5 pb-20 md:px-8 md:pb-28">
@@ -44,9 +46,11 @@ export function CtaBand({
               {primaryLabel}
               <ArrowRight className="size-4" data-icon="inline-end" aria-hidden="true" />
             </Button>
-            <Button size="xl" variant="on-dark" render={<Link href="/explore" />}>
-              Browse the collection
-            </Button>
+            {showSecondary && (
+              <Button size="xl" variant="on-dark" render={<Link href="/explore" />}>
+                Browse the collection
+              </Button>
+            )}
           </div>
         </div>
       </Reveal>

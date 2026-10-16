@@ -6,8 +6,7 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
-import { Mail, MessageCircle, Send } from 'lucide-react'
-import { WHATSAPP_URL } from '@/components/site/nav-links'
+import { Mail, Send } from 'lucide-react'
 
 const initialState: InquiryFormState = { ok: false, message: '' }
 
@@ -24,7 +23,7 @@ export function InquiryForm({
     return (
       <div className="flex flex-col items-center gap-4 rounded-2xl border border-primary/15 bg-secondary/60 px-6 py-12 text-center">
         <span className="flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary">
-          <MessageCircle className="size-6" aria-hidden="true" />
+          <Mail className="size-6" aria-hidden="true" />
         </span>
         <div className="space-y-1.5">
           <h3 className="font-serif text-2xl text-foreground">Contact Aloha Travels</h3>
@@ -32,22 +31,14 @@ export function InquiryForm({
             {state.message}
           </p>
         </div>
-        <div className="mt-2 flex w-full max-w-sm flex-col gap-3 sm:flex-row sm:justify-center">
+        <div className="mt-2 flex w-full max-w-sm justify-center">
           <Button
             size="pill"
             variant="ocean"
-            render={<a href="mailto:travels@alohamaldives.com" />}
+            render={<a href={state.emailHref ?? 'mailto:travels@alohamaldives.com'} />}
           >
             <Mail className="size-4" data-icon="inline-start" aria-hidden="true" />
             Email us
-          </Button>
-          <Button
-            size="pill"
-            variant="ocean-outline"
-            render={<a href={WHATSAPP_URL} target="_blank" rel="noreferrer" />}
-          >
-            <MessageCircle className="size-4" data-icon="inline-start" aria-hidden="true" />
-            WhatsApp us
           </Button>
         </div>
       </div>

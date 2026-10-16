@@ -7,8 +7,8 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { Logo } from './logo'
 import { MobileNav } from './mobile-nav'
-import { navLinks, WHATSAPP_URL } from './nav-links'
-import { MessageCircle } from 'lucide-react'
+import { navLinks, PHONE_URL } from './nav-links'
+import { Phone } from 'lucide-react'
 
 export function Header({
   transparent = false,
@@ -75,12 +75,10 @@ export function Header({
         <div className="flex items-center gap-2">
           {homepage && (
             <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noreferrer"
+              href={PHONE_URL}
               className="hidden items-center gap-2 text-sm font-bold text-primary transition-colors hover:text-secondary 2xl:inline-flex"
             >
-              <MessageCircle className="size-4 text-emerald-600" aria-hidden="true" />
+              <Phone className="size-4 text-secondary" aria-hidden="true" />
               +960 797 4004
             </a>
           )}

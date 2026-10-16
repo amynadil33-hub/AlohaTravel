@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Anchor, ArrowRight, Compass, Fish, MessageCircle, Ship, Waves } from 'lucide-react'
+import { Anchor, ArrowRight, Compass, Fish, Mail, Ship, Waves } from 'lucide-react'
 import { PageShell } from '@/components/site/page-shell'
 import { PageHero } from '@/components/site/page-hero'
 import { SectionHeader } from '@/components/site/section-header'
 import { Reveal } from '@/components/site/reveal'
 import { Button } from '@/components/ui/button'
-import { WHATSAPP_URL } from '@/components/site/nav-links'
+import { EMAIL_ENQUIRY_URL } from '@/components/site/nav-links'
 
 export const metadata: Metadata = {
   title: 'Maldives Safari Yachts',
@@ -73,7 +73,7 @@ export default function SafariYachtsPage() {
             <p className="mt-4 max-w-xl leading-relaxed text-white/80">Tell us what you want from the experience and we’ll help shape the next steps around you.</p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button size="xl" className="bg-white text-primary hover:bg-white/90" render={<Link href="/contact" />}>Send an enquiry<ArrowRight className="size-4" data-icon="inline-end" /></Button>
-              <Button size="xl" variant="on-dark" render={<a href={WHATSAPP_URL} target="_blank" rel="noreferrer" />}><MessageCircle className="size-4" data-icon="inline-start" />WhatsApp us</Button>
+              <Button size="xl" variant="on-dark" render={<a href={EMAIL_ENQUIRY_URL} />}><Mail className="size-4" data-icon="inline-start" />Email us</Button>
             </div>
           </div>
         </Reveal>

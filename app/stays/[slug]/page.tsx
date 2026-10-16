@@ -3,6 +3,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import { ArrowLeft, ChevronRight } from 'lucide-react'
 import {
+  approvedGuestHouses,
   resorts,
   experienceBySlug,
 } from '@/lib/data'
@@ -19,9 +20,12 @@ import {
   HighlightsList,
 } from '@/components/property/detail-sections'
 import { RoomCategoryCard } from '@/components/property/room-category-card'
+import { Gallery } from '@/components/property/gallery'
+
+const publicProperties = [...resorts, ...approvedGuestHouses]
 
 export function generateStaticParams() {
-  return resorts.map((p) => ({ slug: p.slug }))
+  return publicProperties.map((property) => ({ slug: property.slug }))
 }
 
 export async function generateMetadata({
@@ -30,7 +34,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params
-  const property = resorts.find((item) => item.slug === slug)
+  const property = publicProperties.find((item) => item.slug === slug)
   if (!property) return { title: 'Stay not found' }
   return {
     title: `${property.name} — ${property.atoll}`,
@@ -44,20 +48,22 @@ export default async function StayPage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const property = resorts.find((item) => item.slug === slug)
+  const property = publicProperties.find((item) => item.slug === slug)
   if (!property) notFound()
+
+  const isResort = property.type === 'resort'
 
   const relatedExperiences = property.experiences
     .map((s) => experienceBySlug(s))
     .filter((e): e is NonNullable<typeof e> => Boolean(e))
     .slice(0, 3)
 
-  const similar = resorts
+  const similar = (isResort ? resorts : approvedGuestHouses)
     .filter((p) => p.id !== property.id)
     .slice(0, 3)
 
-  const backHref = '/resorts'
-  const backLabel = 'All resorts'
+  const backHref = isResort ? '/resorts' : '/guest-houses'
+  const backLabel = isResort ? 'All resorts' : 'All hotels & guest houses'
 
   return (
     <PageShell>
@@ -93,6 +99,12 @@ export default async function StayPage({
               ))}
             </div>
           </Reveal>
+
+          {!isResort && property.gallery.length > 0 && (
+            <Reveal>
+              <Gallery images={property.gallery} name={property.name} />
+            </Reveal>
+          )}
         </div>
 
         {/* Body grid */}
@@ -106,7 +118,7 @@ export default async function StayPage({
                   <InfoStat label="Atoll" value={property.atoll} />
                   <InfoStat
                     label="Style"
-                    value="Resort"
+                    value={isResort ? 'Resort' : 'Hotel / Guest House'}
                   />
                 </div>
                 <div className="space-y-4 text-pretty text-[1.05rem] leading-relaxed text-foreground/90">
@@ -201,7 +213,7 @@ export default async function StayPage({
             <div className="flex items-end justify-between gap-4">
               <SectionHeader
                 eyebrow="Keep exploring"
-                title="Similar resorts"
+                title={isResort ? 'Similar resorts' : 'More hotels & guest houses'}
                 className="mb-0"
               />
               <Link
@@ -212,9 +224,11 @@ export default async function StayPage({
                 <ChevronRight className="size-4" aria-hidden="true" />
               </Link>
             </div>
-            <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
-              Destination imagery shown for inspiration. Resort photography may vary.
-            </p>
+            {isResort && (
+              <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
+                Destination imagery shown for inspiration. Resort photography may vary.
+              </p>
+            )}
             <div className="mt-10 grid gap-6 md:grid-cols-3">
               {similar.map((p, i) => (
                 <Reveal key={p.id} delay={i * 80}>
