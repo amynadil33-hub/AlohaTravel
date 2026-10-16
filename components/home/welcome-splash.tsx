@@ -6,34 +6,91 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 
 const SEEN_KEY = 'alloha-welcome-seen'
 
-function playWelcomeChime() {
+function playWelcomeMusic() {
   const audio = new AudioContext()
   const master = audio.createGain()
+  const warmth = audio.createBiquadFilter()
+  const reverbDelay = audio.createDelay()
+  const feedback = audio.createGain()
+  const now = audio.currentTime
+  const duration = 18
 
-  master.gain.setValueAtTime(0.0001, audio.currentTime)
-  master.gain.exponentialRampToValueAtTime(0.11, audio.currentTime + 0.25)
-  master.gain.exponentialRampToValueAtTime(0.0001, audio.currentTime + 4.2)
+  master.gain.setValueAtTime(0.0001, now)
+  master.gain.exponentialRampToValueAtTime(0.13, now + 1.2)
+  master.gain.setValueAtTime(0.13, now + duration - 3)
+  master.gain.exponentialRampToValueAtTime(0.0001, now + duration)
   master.connect(audio.destination)
 
-  const notes = [261.63, 329.63, 392, 523.25, 659.25]
+  warmth.type = 'lowpass'
+  warmth.frequency.value = 1800
+  warmth.Q.value = 0.7
+  warmth.connect(master)
 
-  notes.forEach((frequency, index) => {
-    const oscillator = audio.createOscillator()
-    const noteGain = audio.createGain()
-    const startsAt = audio.currentTime + index * 0.38
+  reverbDelay.delayTime.value = 0.32
+  feedback.gain.value = 0.18
+  reverbDelay.connect(feedback)
+  feedback.connect(reverbDelay)
+  reverbDelay.connect(master)
 
-    oscillator.type = index % 2 === 0 ? 'sine' : 'triangle'
-    oscillator.frequency.value = frequency
-    noteGain.gain.setValueAtTime(0.0001, startsAt)
-    noteGain.gain.exponentialRampToValueAtTime(0.28, startsAt + 0.12)
-    noteGain.gain.exponentialRampToValueAtTime(0.0001, startsAt + 2.1)
-    oscillator.connect(noteGain)
-    noteGain.connect(master)
-    oscillator.start(startsAt)
-    oscillator.stop(startsAt + 2.2)
+  const connectWithSpace = (source: AudioNode) => {
+    source.connect(warmth)
+    source.connect(reverbDelay)
+  }
+
+  // Four warm seventh chords form a complete, gentle musical progression.
+  const chords = [
+    [130.81, 164.81, 196, 246.94],
+    [110, 130.81, 164.81, 196],
+    [87.31, 130.81, 164.81, 196],
+    [98, 123.47, 146.83, 164.81],
+  ]
+
+  chords.forEach((chord, chordIndex) => {
+    const chordStart = now + chordIndex * 4
+
+    chord.forEach((frequency, noteIndex) => {
+      const oscillator = audio.createOscillator()
+      const noteGain = audio.createGain()
+
+      oscillator.type = noteIndex % 2 === 0 ? 'sine' : 'triangle'
+      oscillator.frequency.value = frequency
+      oscillator.detune.value = noteIndex % 2 === 0 ? -3 : 3
+      noteGain.gain.setValueAtTime(0.0001, chordStart)
+      noteGain.gain.exponentialRampToValueAtTime(0.12, chordStart + 0.8)
+      noteGain.gain.setValueAtTime(0.12, chordStart + 2.8)
+      noteGain.gain.exponentialRampToValueAtTime(0.0001, chordStart + 4.3)
+      oscillator.connect(noteGain)
+      connectWithSpace(noteGain)
+      oscillator.start(chordStart)
+      oscillator.stop(chordStart + 4.4)
+    })
   })
 
-  window.setTimeout(() => void audio.close(), 4600)
+  // A light pentatonic melody gives the pad a tropical, song-like shape.
+  const melody = [
+    523.25, 659.25, 783.99, 659.25,
+    440, 523.25, 659.25, 783.99,
+    698.46, 659.25, 523.25, 440,
+    493.88, 587.33, 659.25, 523.25,
+  ]
+
+  melody.forEach((frequency, index) => {
+    const oscillator = audio.createOscillator()
+    const noteGain = audio.createGain()
+    const startsAt = now + 0.8 + index * 0.92
+
+    oscillator.type = 'triangle'
+    oscillator.frequency.value = frequency
+    noteGain.gain.setValueAtTime(0.0001, startsAt)
+    noteGain.gain.exponentialRampToValueAtTime(0.2, startsAt + 0.04)
+    noteGain.gain.exponentialRampToValueAtTime(0.0001, startsAt + 0.72)
+    oscillator.connect(noteGain)
+    connectWithSpace(noteGain)
+    oscillator.start(startsAt)
+    oscillator.stop(startsAt + 0.75)
+  })
+
+  window.setTimeout(() => void audio.close(), (duration + 0.5) * 1000)
 }
 
 export function WelcomeSplash() {
@@ -45,7 +102,7 @@ export function WelcomeSplash() {
     if (dismissing.current) return
     dismissing.current = true
 
-    if (withSound) playWelcomeChime()
+    if (withSound) playWelcomeMusic()
     sessionStorage.setItem(SEEN_KEY, 'true')
     setExiting(true)
     window.setTimeout(() => setVisible(false), 1400)
@@ -116,7 +173,7 @@ export function WelcomeSplash() {
               className="inline-flex h-11 items-center gap-2 rounded-full bg-white px-6 text-sm font-semibold text-[#064d75] shadow-lg transition hover:scale-[1.02] hover:bg-white/95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               <Volume2 className="size-4" />
-              Enter with sound
+              Enter with music
             </button>
             <button
               type="button"
