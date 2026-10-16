@@ -8,10 +8,12 @@ import { ExperiencesTeaser } from '@/components/home/experiences-teaser'
 import { StoryBand } from '@/components/home/story-band'
 import { UkulhasSandbankFeature } from '@/components/home/ukulhas-sandbank-feature'
 import { HomeFinalCta } from '@/components/home/home-final-cta'
+import { WelcomeSplash } from '@/components/home/welcome-splash'
 
 export default function HomePage() {
   return (
     <>
+      <WelcomeSplash />
       <Header homepage />
       <main>
         <Hero />

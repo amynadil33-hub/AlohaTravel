@@ -144,6 +144,55 @@
   }
 }
 
+@keyframes welcomeZoom {
+  from {
+    transform: scale(1.04);
+  }
+  to {
+    transform: scale(1.12);
+  }
+}
+
+@keyframes welcomeCopyIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes welcomeProgress {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.welcome-splash-image {
+  animation: welcomeZoom 7s ease-out both;
+}
+
+.welcome-splash-copy {
+  animation: welcomeCopyIn 900ms 250ms ease-out both;
+}
+
+.welcome-splash-progress {
+  animation: welcomeProgress 6s linear both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome-splash-image,
+  .welcome-splash-copy,
+  .welcome-splash-progress {
+    animation: none;
+  }
+}
+
 @keyframes slowZoom {
   from {
     transform: scale(1);
