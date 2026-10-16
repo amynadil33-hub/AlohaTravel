@@ -9,6 +9,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { ImageGalleryEditor } from '@/components/admin/image-gallery-editor'
 
 export function PropertyEditForm({ property }: { property: Property }) {
   const [published, setPublished] = useState(property.published)
@@ -70,6 +71,14 @@ export function PropertyEditForm({ property }: { property: Property }) {
             />
           </FieldGroup>
         </Panel>
+
+        <Panel title="Photo gallery">
+          <ImageGalleryEditor
+            initialImages={property.gallery}
+            name={property.name}
+            minimum={3}
+          />
+        </Panel>
       </div>
 
       <aside className="space-y-6">
@@ -98,9 +107,10 @@ export function PropertyEditForm({ property }: { property: Property }) {
               className="object-cover"
             />
           </div>
-          <Button type="button" variant="outline" size="sm" className="w-full">
-            Replace image
-          </Button>
+          <p className="text-xs leading-relaxed text-muted-foreground">
+            The hero image is separate from the gallery. Gallery photos can be
+            managed in the main editor.
+          </p>
         </Panel>
 
         <div className="sticky bottom-4 space-y-2">

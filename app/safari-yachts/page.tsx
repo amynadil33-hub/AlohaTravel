@@ -8,6 +8,7 @@ import { SectionHeader } from '@/components/site/section-header'
 import { Reveal } from '@/components/site/reveal'
 import { Button } from '@/components/ui/button'
 import { EMAIL_ENQUIRY_URL } from '@/components/site/nav-links'
+import { Gallery } from '@/components/property/gallery'
 
 export const metadata: Metadata = {
   title: 'Maldives Safari Yachts',
@@ -21,6 +22,14 @@ const experiences = [
   { icon: Compass, title: 'Island exploration', copy: 'Combine days at sea with opportunities to discover different island settings.' },
 ]
 
+const safariImages = [
+  '/images/real-atoll-villa-yacht-exterior.jpg',
+  '/images/real-atoll-villa-ocean-lounge.jpg',
+  '/images/real-atoll-villa-open-sea.jpeg',
+  '/images/real-atoll-villa-sundeck.jpg',
+  '/images/real-atoll-villa-island-arrival.jpg',
+]
+
 export default function SafariYachtsPage() {
   return (
     <PageShell>
@@ -31,6 +40,10 @@ export default function SafariYachtsPage() {
         image="/images/real-atoll-villa-yacht-exterior.jpg"
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Safari Yachts' }]}
       />
+
+      <section className="mx-auto max-w-6xl px-5 pt-12 md:px-8 md:pt-16">
+        <Gallery images={safariImages} name="Safari Yachts" />
+      </section>
 
       <section className="py-16 md:py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 md:px-8 lg:grid-cols-2 lg:gap-16">

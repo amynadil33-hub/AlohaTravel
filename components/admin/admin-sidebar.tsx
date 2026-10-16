@@ -7,6 +7,7 @@ import {
   Building2,
   Home,
   Compass,
+  Ship,
   Inbox,
   ExternalLink,
 } from 'lucide-react'
@@ -17,6 +18,7 @@ const items = [
   { href: '/admin', label: 'Dashboard', icon: LayoutDashboard, exact: true },
   { href: '/admin/resorts', label: 'Resorts', icon: Building2 },
   { href: '/admin/guest-houses', label: 'Guest Houses', icon: Home },
+  { href: '/admin/safari-yachts', label: 'Safari Yachts', icon: Ship },
   { href: '/admin/experiences', label: 'Experiences', icon: Compass },
   { href: '/admin/inquiries', label: 'Inquiries', icon: Inbox },
 ]

@@ -100,7 +100,7 @@ export default async function StayPage({
             </div>
           </Reveal>
 
-          {!isResort && property.gallery.length > 0 && (
+          {property.gallery.length >= 3 && (
             <Reveal>
               <Gallery images={property.gallery} name={property.name} />
             </Reveal>
