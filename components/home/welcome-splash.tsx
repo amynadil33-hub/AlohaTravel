@@ -139,7 +139,7 @@ export function WelcomeSplash() {
   return (
     <div
       role="dialog"
-      aria-label="Welcome to Alloha Travels & Tours"
+      aria-label="Welcome to Aloha Travels"
       className={`fixed inset-0 z-[100] overflow-hidden bg-[#087dab] transition-opacity duration-[1400ms] ease-in-out motion-reduce:transition-none ${
         exiting ? 'pointer-events-none opacity-0' : 'opacity-100'
       }`}
@@ -157,7 +157,7 @@ export function WelcomeSplash() {
       <div className="relative flex h-full flex-col items-center justify-end px-6 pb-12 text-center text-white sm:pb-16">
         <div className="welcome-splash-copy">
           <p className="text-xs font-semibold uppercase tracking-[0.34em] drop-shadow-md sm:text-sm">
-            Alloha Travels &amp; Tours
+            Aloha Travels
           </p>
           <h2 className="mt-3 text-balance font-serif text-4xl leading-none drop-shadow-lg sm:text-6xl">
             Let the islands welcome you
