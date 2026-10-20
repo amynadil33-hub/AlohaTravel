@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const waysToStay = [
   { title: 'Private-island resorts', copy: 'Explore overwater villas, beachfront stays, and complete island escapes.', image: '/images/real-westin-hero-aerial.jpg', href: '/resorts', cta: 'Explore resorts' },
   { title: 'Local islands', copy: 'Stay in guest houses and hotels while discovering a more local side of the Maldives.', image: '/images/real-gaadhiffushi-guesthouse-entrance.jpg', href: '/guest-houses', cta: 'Explore local stays' },
-  { title: 'Ocean experiences', copy: 'Build memorable days around marine encounters, cruises, fishing, and sandbanks.', image: '/images/real-westin-snorkelling-aerial.jpg', href: '/experiences', cta: 'Explore experiences' },
+  { title: 'Ocean experiences', copy: 'Build memorable days around marine encounters, cruises, fishing, and sandbanks.', image: '/images/real-westin-snorkelling-aerial.jpg', href: '/#experiences', cta: 'Explore experiences' },
 ]
 
 const travelStyles = [

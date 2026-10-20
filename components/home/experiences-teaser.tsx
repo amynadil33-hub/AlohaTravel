@@ -14,7 +14,7 @@ const experiences = [
 
 export function ExperiencesTeaser() {
   return (
-    <section className="bg-[#f7fcfd] py-16 md:py-20">
+    <section id="experiences" className="scroll-mt-24 bg-[#f7fcfd] py-16 md:py-20">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="max-w-3xl">
           <span className="eyebrow text-secondary">Amazing experiences</span>
