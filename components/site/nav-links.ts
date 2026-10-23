@@ -5,7 +5,7 @@ export const navLinks = [
   { label: 'Resorts', href: '/resorts' },
   { label: 'Hotels & Guest Houses', href: '/guest-houses' },
   { label: 'Safari Yachts', href: '/safari-yachts' },
-  { label: 'Experiences', href: '/experiences' },
+  { label: 'Gallery', href: '/gallery' },
   { label: 'Packages', href: '/packages' },
   { label: 'Contact Us', href: '/contact' },
 ]

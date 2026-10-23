@@ -52,6 +52,7 @@ export default async function StayPage({
   if (!property) notFound()
 
   const isResort = property.type === 'resort'
+  const galleryImages = Array.from(new Set(property.gallery)).filter(Boolean)
 
   const relatedExperiences = property.experiences
     .map((s) => experienceBySlug(s))
@@ -100,9 +101,9 @@ export default async function StayPage({
             </div>
           </Reveal>
 
-          {property.gallery.length >= 3 && (
+          {galleryImages.length > 0 && (
             <Reveal>
-              <Gallery images={property.gallery} name={property.name} />
+              <Gallery images={galleryImages} name={property.name} />
             </Reveal>
           )}
         </div>

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import {
   ArrowUpRight,
@@ -20,7 +21,7 @@ const navigationGroups = [
   {
     title: 'Discover Aloha',
     links: [
-      { label: 'Experiences', href: '/experiences' },
+      { label: 'Gallery', href: '/gallery' },
       { label: 'Packages', href: '/packages' },
       { label: 'Explore by Interest', href: '/explore' },
       { label: 'About Us', href: '/about' },
@@ -64,63 +65,160 @@ export function Footer() {
           </div>
         </div>
 
-        <nav
-          aria-label="Footer navigation"
-          className="grid gap-9 border-t border-white/12 py-10 sm:grid-cols-2 md:gap-14 lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] lg:gap-24 lg:py-12"
-        >
-          {navigationGroups.map((group) => (
-            <div key={group.title}>
-              <h2 className="flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-secondary">
-                <span>{group.title}</span>
-                <span className="h-px w-8 bg-secondary/45" aria-hidden="true" />
-              </h2>
-              <ul className="mt-5 flex max-w-2xl flex-wrap gap-x-8 gap-y-0 md:mt-6 lg:gap-x-10">
-                {group.links.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="inline-flex min-h-12 items-center border-b border-transparent text-base leading-6 text-white/80 transition-colors hover:border-secondary/60 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-4 focus-visible:ring-offset-deep sm:text-[1.05rem]"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+        <div className="grid gap-14 border-t border-white/12 py-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(25rem,0.95fr)] lg:gap-20 lg:py-14">
+          <nav
+            aria-label="Footer navigation"
+            className="grid gap-10 sm:grid-cols-2 sm:gap-12"
+          >
+            {navigationGroups.map((group) => (
+              <div key={group.title}>
+                <h2 className="font-serif text-lg text-white">
+                  {group.title}
+                </h2>
+                <ul className="mt-4 space-y-1">
+                  {group.links.map((link) => (
+                    <li key={link.label}>
+                      <Link
+                        href={link.href}
+                        className="inline-flex min-h-11 items-center text-[0.95rem] leading-6 text-white/65 transition-colors hover:text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-4 focus-visible:ring-offset-deep sm:text-base"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </nav>
+
+          <div>
+            <h2 className="font-serif text-lg text-white">Contact Aloha</h2>
+            <address className="mt-4 grid gap-x-8 not-italic sm:grid-cols-2">
+              <ContactItem icon={MapPin} label="Location">
+                <span>Malé, Maldives</span>
+              </ContactItem>
+              <ContactItem
+                icon={Mail}
+                label="Email"
+                href="mailto:travels@alohamaldives.com"
+              >
+                <span>travels@alohamaldives.com</span>
+              </ContactItem>
+              <ContactItem icon={Phone} label="Telephone" href={PHONE_URL}>
+                <span>+960 797 4004</span>
+              </ContactItem>
+              <ContactItem
+                icon={Mail}
+                label="Enquiries"
+                href={EMAIL_ENQUIRY_URL}
+              >
+                <span>Email our team</span>
+              </ContactItem>
+            </address>
+          </div>
+        </div>
+
+        <div className="grid gap-7 border-t border-white/12 py-7 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:gap-12">
+          <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-6">
+            <a
+              href="https://alohamaldives.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Aloha Maldives, our parent company"
+              className="inline-flex shrink-0 transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-4 focus-visible:ring-offset-deep"
+            >
+              <Image
+                src="/images/aloha-maldives-logo-v2.png"
+                alt="Aloha Maldives"
+                width={1653}
+                height={530}
+                className="h-auto w-[140px] object-contain sm:w-[150px]"
+              />
+            </a>
+            <div>
+              <p className="text-sm leading-6 text-white/65">
+                Part of Aloha Maldives Pvt. Ltd.
+              </p>
+              <div className="mt-1 flex items-center gap-1">
+                <span className="mr-2 text-xs text-white/40">Follow Aloha Maldives</span>
+                <SocialLink
+                  href="https://www.facebook.com/alohamaldivespvtltd/"
+                  label="Aloha Maldives on Facebook"
+                  icon={<FacebookIcon />}
+                />
+                <SocialLink
+                  href="https://www.instagram.com/aloha.maldives/"
+                  label="Aloha Maldives on Instagram"
+                  icon={<InstagramIcon />}
+                />
+              </div>
             </div>
-          ))}
-        </nav>
+          </div>
 
-        <address className="grid gap-x-10 border-t border-white/12 py-6 not-italic sm:grid-cols-2 sm:gap-y-1 lg:py-8 xl:grid-cols-4 xl:gap-x-8">
-          <ContactItem icon={MapPin} label="Visit">
-            <span>Malé, Maldives</span>
-          </ContactItem>
-          <ContactItem
-            icon={Mail}
-            label="Write"
-            href="mailto:travels@alohamaldives.com"
-          >
-            <span>travels@alohamaldives.com</span>
-          </ContactItem>
-          <ContactItem icon={Phone} label="Call" href={PHONE_URL}>
-            <span>+960 797 4004</span>
-          </ContactItem>
-          <ContactItem
-            icon={Mail}
-            label="Enquire"
-            href={EMAIL_ENQUIRY_URL}
-          >
-            <span>Email our team</span>
-          </ContactItem>
-        </address>
-
-        <div className="flex flex-col gap-2 border-t border-white/[0.08] py-5 text-[0.72rem] tracking-[0.08em] sm:flex-row sm:items-center sm:justify-between sm:py-6">
-          <span className="text-white/55">Aloha Travels — Maldives</span>
-          <span className="text-deep-foreground/35">
-            © {new Date().getFullYear()} Aloha Travels. All rights reserved.
-          </span>
+          <div className="space-y-1 text-xs leading-5 tracking-[0.04em] lg:text-right">
+            <p className="text-white/55">Aloha Travels — Maldives</p>
+            <p className="text-deep-foreground/35">
+              © {new Date().getFullYear()} Aloha Travels. All rights reserved.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
+  )
+}
+
+function SocialLink({
+  href,
+  label,
+  icon: Icon,
+}: {
+  href: string
+  label: string
+  icon: React.ReactNode
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={label}
+      title={label}
+      className="inline-flex size-11 items-center justify-center text-white/70 transition-colors hover:text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-4 focus-visible:ring-offset-deep"
+    >
+      {Icon}
+    </a>
+  )
+}
+
+function FacebookIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className="size-[1.15rem]"
+      aria-hidden="true"
+    >
+      <path d="M13.5 21v-8h2.75l.41-3.17H13.5V7.8c0-.92.26-1.54 1.59-1.54h1.7V3.43a22.8 22.8 0 0 0-2.48-.13c-2.45 0-4.13 1.5-4.13 4.25v2.28H7.4V13h2.78v8h3.32Z" />
+    </svg>
+  )
+}
+
+function InstagramIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="size-[1.15rem]"
+      aria-hidden="true"
+    >
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
+    </svg>
   )
 }
 
