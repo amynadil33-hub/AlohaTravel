@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { Logo } from './logo'
 import { MobileNav } from './mobile-nav'
-import { navLinks, PHONE_URL, WHATSAPP_URL } from './nav-links'
+import { navLinks, PHONE_URL } from './nav-links'
 import { ArrowUpRight, Phone } from 'lucide-react'
 
 export function Header({
@@ -74,7 +74,7 @@ export function Header({
         </nav>
 
         <div className="flex items-center gap-2">
-          <div className="hidden shrink-0 flex-col items-stretch gap-1 xl:flex">
+          <div className="hidden shrink-0 xl:block">
             <a
               href={PHONE_URL}
               className={cn(
@@ -86,16 +86,6 @@ export function Header({
             >
               <Phone className="size-3.5 shrink-0 text-secondary" aria-hidden="true" />
               <span>+960 797 4004</span>
-            </a>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Chat with Aloha Travels on WhatsApp"
-              className="inline-flex whitespace-nowrap items-center justify-center gap-1.5 rounded-full bg-[#25D366] px-3 py-1 text-[0.65rem] font-bold text-white shadow-sm transition-all hover:-translate-y-px hover:bg-[#1fbd5b] hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            >
-              <WhatsAppIcon />
-              WhatsApp
             </a>
           </div>
           <Button
@@ -141,18 +131,5 @@ export function Header({
         </div>
       </div>
     </header>
-  )
-}
-
-function WhatsAppIcon() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className="size-3.5 shrink-0"
-      aria-hidden="true"
-    >
-      <path d="M12.04 2a9.84 9.84 0 0 0-8.46 14.86L2 22l5.29-1.54A9.96 9.96 0 1 0 12.04 2Zm0 17.92a8.06 8.06 0 0 1-4.1-1.12l-.3-.18-3.14.92.94-3.06-.2-.31a7.86 7.86 0 1 1 6.8 3.75Zm4.4-5.89c-.24-.12-1.43-.7-1.65-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.02-.37-1.94-1.2a7.27 7.27 0 0 1-1.34-1.66c-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.47-.39-.41-.54-.42h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.43-.59 1.63-1.15.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z" />
-    </svg>
   )
 }

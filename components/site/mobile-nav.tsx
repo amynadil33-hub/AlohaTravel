@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import { Mail, Menu, MessageCircle, Phone } from 'lucide-react'
+import { Mail, Menu, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
   Sheet,
@@ -18,7 +18,6 @@ import {
   EMAIL_ENQUIRY_URL,
   navLinks,
   PHONE_URL,
-  WHATSAPP_URL,
 } from './nav-links'
 
 export function MobileNav({ onDark = false }: { onDark?: boolean }) {
@@ -77,14 +76,6 @@ export function MobileNav({ onDark = false }: { onDark?: boolean }) {
             >
               <Phone className="size-4" aria-hidden="true" />
               +960 797 4004
-            </Button>
-            <Button
-              size="lg"
-              className="bg-[#25D366] text-white hover:bg-[#1fbd5b]"
-              render={<a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" />}
-            >
-              <MessageCircle className="size-4" aria-hidden="true" />
-              Chat on WhatsApp
             </Button>
             <Button size="xl" variant="ocean" render={<Link href="/contact" onClick={() => setOpen(false)} />}>
               Plan Your Trip
