@@ -13,3 +13,4 @@ export const navLinks = [
 export const CONTACT_EMAIL = 'travels@alohamaldives.com'
 export const EMAIL_ENQUIRY_URL = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Maldives travel enquiry')}`
 export const PHONE_URL = 'tel:+9607974004'
+export const WHATSAPP_URL = 'https://wa.me/9607974004'

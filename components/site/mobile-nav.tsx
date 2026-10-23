@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import { Mail, Menu } from 'lucide-react'
+import { Mail, Menu, MessageCircle, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
   Sheet,
@@ -14,7 +14,12 @@ import {
 } from '@/components/ui/sheet'
 import { cn } from '@/lib/utils'
 import { Logo } from './logo'
-import { EMAIL_ENQUIRY_URL, navLinks } from './nav-links'
+import {
+  EMAIL_ENQUIRY_URL,
+  navLinks,
+  PHONE_URL,
+  WHATSAPP_URL,
+} from './nav-links'
 
 export function MobileNav({ onDark = false }: { onDark?: boolean }) {
   const [open, setOpen] = useState(false)
@@ -64,6 +69,23 @@ export function MobileNav({ onDark = false }: { onDark?: boolean }) {
             })}
           </nav>
           <div className="flex flex-col gap-2 border-t border-border px-4 py-5">
+            <Button
+              size="lg"
+              variant="outline"
+              className="whitespace-nowrap"
+              render={<a href={PHONE_URL} />}
+            >
+              <Phone className="size-4" aria-hidden="true" />
+              +960 797 4004
+            </Button>
+            <Button
+              size="lg"
+              className="bg-[#25D366] text-white hover:bg-[#1fbd5b]"
+              render={<a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" />}
+            >
+              <MessageCircle className="size-4" aria-hidden="true" />
+              Chat on WhatsApp
+            </Button>
             <Button size="xl" variant="ocean" render={<Link href="/contact" onClick={() => setOpen(false)} />}>
               Plan Your Trip
             </Button>
