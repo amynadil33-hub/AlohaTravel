@@ -1,17 +1,28 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Search, Pencil, ExternalLink } from 'lucide-react'
 import type { Property } from '@/lib/types'
 import { Input } from '@/components/ui/input'
 import { PublishedPill } from '@/components/admin/admin-ui'
+import { getAdminProperties } from '@/lib/admin-catalog'
 
 export function PropertyTable({ properties }: { properties: Property[] }) {
   const [query, setQuery] = useState('')
+  const [items, setItems] = useState(properties)
 
-  const filtered = properties.filter((p) => {
+  useEffect(() => {
+    const type = properties[0]?.type
+    const stored = getAdminProperties().filter((property) => property.type === type)
+    setItems([
+      ...stored,
+      ...properties.filter((property) => !stored.some((saved) => saved.id === property.id)),
+    ])
+  }, [properties])
+
+  const filtered = items.filter((p) => {
     const q = query.trim().toLowerCase()
     if (!q) return true
     return (
@@ -58,6 +69,7 @@ export function PropertyTable({ properties }: { properties: Property[] }) {
                           src={p.heroImage || '/placeholder.svg'}
                           alt=""
                           fill
+                          unoptimized={p.heroImage.startsWith('data:')}
                           sizes="44px"
                           className="object-cover"
                         />
@@ -81,21 +93,29 @@ export function PropertyTable({ properties }: { properties: Property[] }) {
                   </td>
                   <td className="px-5 py-3">
                     <div className="flex items-center justify-end gap-3">
-                      <Link
-                        href={`/admin/${p.type === 'resort' ? 'resorts' : 'guest-houses'}/${p.slug}`}
-                        className="inline-flex items-center gap-1.5 text-primary transition-colors hover:text-primary/80"
-                      >
-                        <Pencil className="size-3.5" aria-hidden="true" />
-                        Edit
-                      </Link>
-                      <Link
-                        href={`/stays/${p.slug}`}
-                        className="inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-foreground"
-                        target="_blank"
-                      >
-                        <ExternalLink className="size-3.5" aria-hidden="true" />
-                        <span className="sr-only">View live</span>
-                      </Link>
+                      {p.heroImage.startsWith('data:') ? (
+                        <span className="rounded-full bg-accent/15 px-2.5 py-1 text-xs font-semibold text-accent-foreground">
+                          Browser draft
+                        </span>
+                      ) : (
+                        <>
+                          <Link
+                            href={`/admin/${p.type === 'resort' ? 'resorts' : 'guest-houses'}/${p.slug}`}
+                            className="inline-flex items-center gap-1.5 text-primary transition-colors hover:text-primary/80"
+                          >
+                            <Pencil className="size-3.5" aria-hidden="true" />
+                            Edit
+                          </Link>
+                          <Link
+                            href={`/stays/${p.slug}`}
+                            className="inline-flex items-center gap-1.5 text-muted-foreground transition-colors hover:text-foreground"
+                            target="_blank"
+                          >
+                            <ExternalLink className="size-3.5" aria-hidden="true" />
+                            <span className="sr-only">View live</span>
+                          </Link>
+                        </>
+                      )}
                     </div>
                   </td>
                 </tr>

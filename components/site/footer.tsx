@@ -118,40 +118,52 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="grid gap-7 border-t border-white/12 py-7 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:gap-12">
-          <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-6">
+        <div className="grid gap-8 border-t border-white/12 py-9 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:gap-12">
+          <div className="flex max-w-xl flex-col items-start gap-4">
             <a
               href="https://alohamaldives.com/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visit Aloha Maldives, our parent company"
-              className="inline-flex shrink-0 transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-4 focus-visible:ring-offset-deep"
+              className="group relative flex w-full items-center justify-between gap-5 overflow-hidden rounded-2xl border border-white/70 bg-gradient-to-br from-white via-white to-[#f3f7ff] p-5 text-primary shadow-[0_24px_55px_-28px_rgba(0,0,0,0.85)] transition-all duration-300 hover:-translate-y-1 hover:border-secondary/40 hover:shadow-[0_28px_60px_-24px_rgba(0,0,0,0.9)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-4 focus-visible:ring-offset-deep sm:p-6"
             >
-              <Image
-                src="/images/aloha-maldives-logo-v2.png"
-                alt="Aloha Maldives"
-                width={1653}
-                height={530}
-                className="h-auto w-[140px] object-contain sm:w-[150px]"
-              />
+              <span className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-[#ed1c24] via-[#f97316] to-secondary" />
+              <span>
+                <span className="mb-3 block text-[0.65rem] font-bold uppercase tracking-[0.22em] text-primary/45">
+                  Our parent company
+                </span>
+                <Image
+                  src="/images/aloha-maldives-logo-v2.png"
+                  alt="Aloha Maldives"
+                  width={1653}
+                  height={530}
+                  className="h-auto w-[170px] object-contain sm:w-[205px]"
+                />
+                <span className="mt-3 block text-xs font-semibold tracking-wide text-primary/60 sm:text-sm">
+                  Visit alohamaldives.com
+                </span>
+              </span>
+              <span className="grid size-11 shrink-0 place-items-center rounded-full bg-primary text-white shadow-lg transition-all duration-300 group-hover:bg-secondary group-hover:shadow-secondary/25 sm:size-12">
+                <ArrowUpRight
+                  className="size-5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  aria-hidden="true"
+                />
+              </span>
             </a>
-            <div>
-              <p className="text-sm leading-6 text-white/65">
-                Part of Aloha Maldives Pvt. Ltd.
-              </p>
-              <div className="mt-1 flex items-center gap-1">
-                <span className="mr-2 text-xs text-white/40">Follow Aloha Maldives</span>
-                <SocialLink
-                  href="https://www.facebook.com/alohamaldivespvtltd/"
-                  label="Aloha Maldives on Facebook"
-                  icon={<FacebookIcon />}
-                />
-                <SocialLink
-                  href="https://www.instagram.com/aloha.maldives/"
-                  label="Aloha Maldives on Instagram"
-                  icon={<InstagramIcon />}
-                />
-              </div>
+            <div className="flex flex-wrap items-center gap-x-3 pl-1">
+              <span className="text-xs uppercase tracking-[0.14em] text-white/45">
+                Follow Aloha Maldives
+              </span>
+              <SocialLink
+                href="https://www.facebook.com/alohamaldivespvtltd/"
+                label="Aloha Maldives on Facebook"
+                icon={<FacebookIcon />}
+              />
+              <SocialLink
+                href="https://www.instagram.com/aloha.maldives/"
+                label="Aloha Maldives on Instagram"
+                icon={<InstagramIcon />}
+              />
             </div>
           </div>
 

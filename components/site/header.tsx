@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils'
 import { Logo } from './logo'
 import { MobileNav } from './mobile-nav'
 import { navLinks, PHONE_URL } from './nav-links'
-import { Phone } from 'lucide-react'
+import { ArrowUpRight, Phone } from 'lucide-react'
 
 export function Header({
   transparent = false,
@@ -98,15 +98,30 @@ export function Header({
             rel="noopener noreferrer"
             aria-label="Visit Aloha Maldives"
             title="Visit Aloha Maldives"
-            className="group inline-flex shrink-0 items-center rounded-md px-1 py-1 transition hover:bg-primary/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            className={cn(
+              'group relative inline-flex shrink-0 items-center gap-2 overflow-hidden rounded-xl border bg-white/95 px-2.5 py-2 shadow-[0_10px_30px_-16px_rgba(6,42,82,0.8)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-secondary/50 hover:shadow-[0_14px_34px_-14px_rgba(6,42,82,0.7)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2',
+              onDark
+                ? 'border-white/40 focus-visible:ring-offset-deep'
+                : 'border-primary/10 focus-visible:ring-offset-white',
+            )}
           >
+            <span className="absolute inset-y-0 left-0 w-0.5 bg-gradient-to-b from-[#ed1c24] to-[#f97316]" />
             <Image
               src="/images/aloha-maldives-partner.png"
               alt="Aloha Maldives"
               width={155}
               height={52}
-              className="h-auto w-[92px] transition-transform duration-300 group-hover:scale-[1.03] sm:w-[108px] 2xl:w-[118px]"
+              className="h-auto w-[94px] transition-transform duration-300 group-hover:scale-[1.04] sm:w-[108px] 2xl:w-[116px]"
             />
+            <span className="hidden border-l border-primary/10 pl-2 2xl:block">
+              <span className="block text-[0.55rem] font-bold uppercase tracking-[0.18em] text-primary/45">
+                Parent company
+              </span>
+              <span className="mt-0.5 flex items-center gap-1 text-[0.68rem] font-bold text-primary">
+                Visit website
+                <ArrowUpRight className="size-3 text-secondary transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
+              </span>
+            </span>
           </a>
         </div>
       </div>
