@@ -6,8 +6,8 @@ import { Reveal } from '@/components/site/reveal'
 const experiences = [
   { title: 'Honeymoons', image: '/images/real-westin-romance.jpg', href: '/explore?interest=honeymoon' },
   { title: 'Diving', image: '/images/real-dhigufaru-scuba-preparation.jpg', href: '/explore?interest=diving', alt: 'Scuba divers preparing to enter the water in the Maldives' },
-  { title: 'Surfing', image: '/images/real-avanti-surfing.png', href: '/explore?interest=adventure' },
-  { title: 'Island Hopping', image: '/images/real-dhigufaru-sandbank.jpg', href: '/explore' },
+  { title: 'Surfing', image: '/images/real-avanti-surfing.png', href: '/explore?interest=surfing' },
+  { title: 'Island Hopping', image: '/images/real-dhigufaru-sandbank.jpg', href: '/explore?interest=island-hopping' },
   { title: 'Wellness', image: '/images/real-westin-spa.jpg', href: '/explore?interest=relaxation' },
   { title: 'Family Holidays', image: '/images/real-westin-kayak-island.jpg', href: '/explore?interest=family' },
 ]

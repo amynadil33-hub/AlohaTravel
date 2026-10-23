@@ -3,7 +3,8 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { Check } from 'lucide-react'
-import type { Property } from '@/lib/types'
+import type { InterestSlug, Property } from '@/lib/types'
+import { interests } from '@/lib/data'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
@@ -14,6 +15,9 @@ import { ImageGalleryEditor } from '@/components/admin/image-gallery-editor'
 export function PropertyEditForm({ property }: { property: Property }) {
   const [published, setPublished] = useState(property.published)
   const [featured, setFeatured] = useState(property.featured)
+  const [selectedInterests, setSelectedInterests] = useState<InterestSlug[]>(
+    property.interests,
+  )
   const [saved, setSaved] = useState(false)
 
   function handleSave(e: React.FormEvent) {
@@ -56,6 +60,56 @@ export function PropertyEditForm({ property }: { property: Property }) {
               defaultValue={property.description}
             />
           </FieldGroup>
+        </Panel>
+
+        <Panel title="Explore categories">
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            Choose every category that fits this stay. These selections control
+            which resorts and hotels appear when visitors explore by category.
+          </p>
+          <input
+            type="hidden"
+            name="interests"
+            value={selectedInterests.join(',')}
+          />
+          <div className="grid gap-2 sm:grid-cols-2">
+            {interests.map((interest) => {
+              const selected = selectedInterests.includes(interest.slug)
+              return (
+                <button
+                  key={interest.slug}
+                  type="button"
+                  role="checkbox"
+                  aria-checked={selected}
+                  onClick={() =>
+                    setSelectedInterests((current) =>
+                      selected
+                        ? current.filter((slug) => slug !== interest.slug)
+                        : [...current, interest.slug],
+                    )
+                  }
+                  className={cn(
+                    'flex items-center gap-3 rounded-xl border px-3 py-3 text-left text-sm font-medium transition-colors',
+                    selected
+                      ? 'border-primary bg-primary/5 text-primary'
+                      : 'border-border bg-background text-foreground/75 hover:border-primary/40',
+                  )}
+                >
+                  <span
+                    className={cn(
+                      'flex size-5 shrink-0 items-center justify-center rounded border',
+                      selected
+                        ? 'border-primary bg-primary text-primary-foreground'
+                        : 'border-border bg-card',
+                    )}
+                  >
+                    {selected && <Check className="size-3.5" aria-hidden="true" />}
+                  </span>
+                  {interest.name}
+                </button>
+              )
+            })}
+          </div>
         </Panel>
 
         <Panel title="Tags &amp; highlights">

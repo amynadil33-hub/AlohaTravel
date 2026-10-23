@@ -12,6 +12,10 @@ export type InterestSlug =
   | 'romantic'
   | 'adventure'
   | 'relaxation'
+  | 'surfing'
+  | 'island-hopping'
+  | 'barefoot-luxury'
+  | 'island-life'
 
 export interface Interest {
   id: string

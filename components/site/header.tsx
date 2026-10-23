@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { Button } from '@/components/ui/button'
@@ -91,6 +92,22 @@ export function Header({
             Plan Your Trip
           </Button>
           <MobileNav onDark={onDark} />
+          <a
+            href="https://alohamaldives.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit Aloha Maldives"
+            title="Visit Aloha Maldives"
+            className="group inline-flex shrink-0 items-center rounded-md px-1 py-1 transition hover:bg-primary/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          >
+            <Image
+              src="/images/aloha-maldives-partner.png"
+              alt="Aloha Maldives"
+              width={155}
+              height={52}
+              className="h-auto w-[92px] transition-transform duration-300 group-hover:scale-[1.03] sm:w-[108px] 2xl:w-[118px]"
+            />
+          </a>
         </div>
       </div>
     </header>

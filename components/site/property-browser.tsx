@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Search, SlidersHorizontal, X } from 'lucide-react'
 import type { InterestSlug, Property } from '@/lib/types'
 import { interests } from '@/lib/data'
@@ -21,6 +21,10 @@ export function PropertyBrowser({
   const [atoll, setAtoll] = useState<string>('all')
   const [interest, setInterest] = useState<string>(initialInterest ?? 'all')
   const [sort, setSort] = useState<'featured' | 'az'>('featured')
+
+  useEffect(() => {
+    setInterest(initialInterest ?? 'all')
+  }, [initialInterest])
 
   const availableAtolls = useMemo(
     () => Array.from(new Set(items.map((p) => p.atoll))).sort(),

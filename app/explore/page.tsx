@@ -5,7 +5,7 @@ import { PropertyBrowser } from '@/components/site/property-browser'
 import { MoodGrid } from '@/components/explore/mood-grid'
 import { SectionHeader } from '@/components/site/section-header'
 import { CtaBand } from '@/components/site/cta-band'
-import { resorts, interestBySlug } from '@/lib/data'
+import { approvedGuestHouses, resorts, interestBySlug } from '@/lib/data'
 
 export const metadata: Metadata = {
   title: 'Explore the Maldives by Interest',
@@ -55,10 +55,13 @@ export default async function ExplorePage({
       <section className="mx-auto max-w-6xl px-5 pb-16 pt-6 md:px-8 md:pb-24">
         <SectionHeader
           eyebrow="Approved collection"
-          title="Browse approved resorts"
+          title={matched ? `Stays for ${matched.name}` : 'Browse approved stays'}
           className="mb-10"
         />
-        <PropertyBrowser items={resorts} />
+        <PropertyBrowser
+          items={[...resorts, ...approvedGuestHouses]}
+          initialInterest={matched?.slug}
+        />
       </section>
 
       <CtaBand image="/images/real-dhigufaru-fishing.jpg" />

@@ -17,14 +17,18 @@ restart identity cascade;
 
 -- Interests -------------------------------------------------------------------
 insert into public.interests (slug, id, name, description, image_url, featured, sort_order) values
-  ('diving',       'int-diving',       'Diving',            'World-class channels, thilas and house reefs teeming with life.', '/images/interest-diving.png',      true,  1),
+  ('diving',       'int-diving',       'Diving & Underwater Adventure', 'World-class channels, thilas and house reefs teeming with life.', '/images/interest-diving.png',      true,  1),
   ('snorkeling',   'int-snorkeling',   'Snorkeling',        'Step off the beach into gardens of coral and turtles.',           '/images/interest-snorkeling.png',  true,  2),
-  ('honeymoon',    'int-honeymoon',    'Honeymoon',         'Overwater villas, private dinners and time that slows down.',      '/images/interest-honeymoon.png',   true,  3),
+  ('honeymoon',    'int-honeymoon',    'Honeymoons',        'Overwater villas, private dinners and time that slows down.',      '/images/interest-honeymoon.png',   true,  3),
   ('family',       'int-family',       'Family Holidays',   'Shallow lagoons, kids clubs and islands made for play.',           '/images/interest-family.png',      true,  4),
   ('water-sports', 'int-water-sports', 'Water Sports',      'Jet skis, catamarans, kite surfing and lagoon adventures.',        '/images/interest-watersports.png', false, 5),
-  ('romantic',     'int-romantic',     'Romantic Getaways', 'Sandbank picnics and sunsets shared just the two of you.',         '/images/interest-romantic.png',    false, 6),
+  ('romantic',     'int-romantic',     'Romantic Escape',   'Sandbank picnics and sunsets shared just the two of you.',         '/images/interest-romantic.png',    false, 6),
   ('adventure',    'int-adventure',    'Adventure',         'Surf breaks, big fish and islands off the beaten track.',          '/images/interest-adventure.png',   false, 7),
-  ('relaxation',   'int-relaxation',   'Relaxation',        'Spas over the water, hammocks and nowhere to be.',                 '/images/interest-relaxation.png',  false, 8);
+  ('relaxation',   'int-relaxation',   'Wellness & Slow Escapes', 'Spas over the water, hammocks and nowhere to be.',              '/images/interest-relaxation.png',  false, 8),
+  ('surfing',      'int-surfing',      'Surfing',            'Island stays well placed for surf breaks and time on the water.', '/images/real-avanti-surfing.png',  true,  9),
+  ('island-hopping','int-island-hopping','Island Hopping',   'Build a Maldives journey around more than one island and atoll.', '/images/real-dhigufaru-sandbank.jpg', true, 10),
+  ('barefoot-luxury','int-barefoot-luxury','Barefoot Luxury','Refined island stays with an easy, unhurried atmosphere.',         '/images/real-atoll-villa-sundeck.jpg', true, 11),
+  ('island-life',  'int-island-life',  'Island Life',        'Stay close to local communities and everyday island rhythms.',    '/images/real-h78-iru-reception.webp', true, 12);
 
 -- Experiences -----------------------------------------------------------------
 insert into public.experiences (slug, id, name, description, image_url, featured, sort_order) values
@@ -218,7 +222,7 @@ values
 
 -- Property <-> interest --------------------------------------------------------
 insert into public.property_interests (property_id, interest_slug) values
-  ('prop-baros','honeymoon'),('prop-baros','diving'),('prop-baros','snorkeling'),('prop-baros','romantic'),
+  ('prop-baros','honeymoon'),('prop-baros','diving'),('prop-baros','snorkeling'),('prop-baros','romantic'),('prop-baros','barefoot-luxury'),
   ('prop-velaa-lagoon','water-sports'),('prop-velaa-lagoon','family'),('prop-velaa-lagoon','relaxation'),('prop-velaa-lagoon','snorkeling'),
   ('prop-soneva-secret','honeymoon'),('prop-soneva-secret','romantic'),('prop-soneva-secret','relaxation'),('prop-soneva-secret','diving'),
   ('prop-milaidhoo','honeymoon'),('prop-milaidhoo','diving'),('prop-milaidhoo','romantic'),('prop-milaidhoo','snorkeling'),
@@ -227,7 +231,7 @@ insert into public.property_interests (property_id, interest_slug) values
   ('prop-dhigurah-retreat','snorkeling'),('prop-dhigurah-retreat','adventure'),('prop-dhigurah-retreat','diving'),('prop-dhigurah-retreat','relaxation'),
   ('prop-maafushi-breeze','family'),('prop-maafushi-breeze','water-sports'),('prop-maafushi-breeze','snorkeling'),('prop-maafushi-breeze','adventure'),
   ('prop-ukulhas-beach','relaxation'),('prop-ukulhas-beach','snorkeling'),('prop-ukulhas-beach','romantic'),('prop-ukulhas-beach','family'),
-  ('prop-thulusdhoo-surf','adventure'),('prop-thulusdhoo-surf','water-sports'),('prop-thulusdhoo-surf','snorkeling'),
+  ('prop-thulusdhoo-surf','adventure'),('prop-thulusdhoo-surf','water-sports'),('prop-thulusdhoo-surf','snorkeling'),('prop-thulusdhoo-surf','surfing'),('prop-thulusdhoo-surf','island-life'),
   ('prop-fulhadhoo-stay','relaxation'),('prop-fulhadhoo-stay','romantic'),('prop-fulhadhoo-stay','snorkeling'),
   ('prop-hanifaru-lodge','snorkeling'),('prop-hanifaru-lodge','adventure'),('prop-hanifaru-lodge','family'),('prop-hanifaru-lodge','relaxation');
 
